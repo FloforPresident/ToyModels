@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index Site</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/test.css">
+        <meta charset="utf-8"> 
+    </head>
+    <body>
+        <header>
+            <h1>Toy Models GmbH</h1>
+            <section id="suchfeld">
+                <label for="suche">Search</label> 
+                <input type="search" placeholder="Suche">
+            </section>  
+            
+            <section id="signIn">
+                <button type="button">Anmelden</button>
+                <button type="button">
+                        <a href="registrieren.html">Registrieren</a>
+                </button>
+                <input type="text" id="kundennummer" placeholder="Kundennummer">
+                <input type="password" id="password" placeholder="Passwort">
+            </section>
+
+            <section id="warenkorb">
+                <a href="warenkorb.html">Hier zum Warenkorb</a>
+            </section>
+        </header>    
+        <main class="artikelAnzeige">
+            <h2>Unsere Artikel</h2>
+            <select>
+                <option value="alle">Alle</option>
+                <option value="autos">Autos</option>
+                <option value="eisenbahnen">Eisenbahnen</option>
+                <option value="schiffe">Schiffe</option>
+                <option value="flugzeuge">Flugzeuge</option>
+            </select>
+
+            <br>
+
+            <section class="artikel">
+                <h3 class="name">Boing</h3>
+                <p class="artikelNummer">ArtNummer: 1</p>
+                <p class="beschreibung">Beschreibung: Cool!</p>
+                <p class="preis">100&euro;</p>
+                <button type="button">In den Warenkorb</button>
+            </section>
+
+            <hr>
+
+            <section class="artikel">
+                <h3 class="name">Titanic</h3>
+                <p class="artikelNummer">ArtNummer: 2</p>
+                <p class="beschreibung">Beschreibung: 1 cooles Titanic mit Türen & Fenstern!</p>
+                <p class="preis">200000&euro;</p>
+                <button type="button">In den Warenkorb</button>
+            </section>
+        </main>
+        <footer>
+            <a href="impressum.html">Zum Impressum</a>
+        </footer>
+    </body>
+</html>
