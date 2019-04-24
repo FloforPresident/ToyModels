@@ -65,3 +65,16 @@ footer section{
     display:flex;
     align-self: center;
 }
+
+
+/* Media Queries */
+
+@media (max-width: 700px){
+    header{
+        flex-direction:column;
+        height:15rem;
+    }
+    main{
+        margin:15rem 0 !important;
+    }
+}
