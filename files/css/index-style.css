@@ -54,7 +54,6 @@ main .artikel img, main .artikel ul{
 main .artikel img{
     width:33.33%;
     height:auto;
-    max-width:50%;
 }
 main .artikel ul{
     width:66.66%;

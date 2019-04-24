@@ -1,0 +1,10 @@
+#warenkorbArtikel{
+    padding:2rem;
+}
+#warenkorbArtikel #kasse{
+    width: 10rem;
+    height: 3rem;
+    background-color: lightpink;
+    margin: 1rem;
+    cursor:pointer;
+}
