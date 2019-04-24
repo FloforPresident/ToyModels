@@ -2,22 +2,62 @@
 <html>
     <head>
         <title>Hier Registrieren</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/register-style.css">
         <meta charset="utf-8"> 
     </head>
     <body>
-        <h1>Hi ich bin Stefan, du kannst dich hier Registrieren</h1>
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Adresse">
-        <input type="password" placeholder="Passwort">
-        <input type="password" placeholder="Passwort wiederholen">
-        
-        <section>
-                <input type="radio" id="agb" name="AGB" value="AGB">
-                <label for="agb">AGB bestaetigen</label> 
-                <button type="button">Kostenpflichtig Registrieren</button>
-        </section>
-        <button type="button">
-                <a href="index.html">Zurueck zu unserem Angebot</a>
+        <header>
+            <section>
+                <a href="index.html">
+                    <h1>Toy Models GmbH</h1>
+                </a>
+            </section>
+            <section id="suchfeld">
+                <!-- <label for="suche">Search</label>  -->
+                <input type="search" placeholder="Suche">
+            </section>  
+            <section id="signIn">
+                <button type="button">
+                    <a href="registrieren.html">Registrieren</a>
+                </button>
+                <button type="button">Anmelden</button>
+                <section id="eingaben">
+                    <input type="text" id="kundennummer" placeholder="Kundennummer">
+                    <input type="password" id="password" placeholder="Passwort">
+                </section>
+            </section>
+            <section id="warenkorb">
+                <a href="warenkorb.html">Warenkorb</a>
+            </section>
+        </header>
+        <main>
+            <h1>Hi ich bin Stefan, du kannst dich hier Registrieren</h1>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Adresse">
+            <input type="password" placeholder="Passwort">
+            <input type="password" placeholder="Passwort wiederholen">
+            
+            <section>
+                    <input type="radio" id="agb" name="AGB" value="AGB">
+                    <label for="agb">AGB bestaetigen</label> 
+                    <button type="button">Kostenpflichtig Registrieren</button>
+            </section>
+            <button type="button">
+                    <a href="index.html">Zurueck zu unserem Angebot</a>
             </button>
+        </main>
+        <footer>
+            <section id="disclaimer">
+                <a href="index.html">Home</a>
+            </section>
+            <section id="kontakt">
+                <ul>
+                    <li>ToyModels</li>
+                    <li>Stefan Kränzle</li>
+                    <li>0151 934848304</li>
+                </ul>
+            </section>
+        </footer>
     </body>
 </html>

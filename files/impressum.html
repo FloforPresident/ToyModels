@@ -2,20 +2,57 @@
 <html>
     <head>
         <title>Impressum</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/impressum-style.css">
         <meta charset="utf-8"> 
     </head>
     <body>
-        <h1>Hallo, ich hoffe Ihnen gefällt unser Impressum, COOL</h1>
-        <a href="tel:918054646">91805 4646</a>
-        <br>
-        <a href="mail:stefan@th-nuernberg.de">toy@store.de</a>
-        <br>
-        <a href="fax:918054646">Schicken Sie uns ein Fax</a>
-        
-        <hr>
-
-        <button type="button">
-                <a href="index.html">Back 2 Index</a>
-        </button>
+    <header>
+            <section>
+                    <a href="index.html">
+                        <h1>Toy Models GmbH</h1>
+                    </a>
+            </section>
+            <section id="suchfeld">
+                <!-- <label for="suche">Search</label>  -->
+                <input type="search" placeholder="Suche">
+            </section>  
+            <section id="signIn">
+                <button type="button">
+                        <a href="registrieren.html">Registrieren</a>
+                </button>
+                <button type="button">Anmelden</button>
+                <section id="eingaben">
+                    <input type="text" id="kundennummer" placeholder="Kundennummer">
+                    <input type="password" id="password" placeholder="Passwort">
+                </section>
+            </section>
+            <section id="warenkorb">
+                <a href="warenkorb.html">Warenkorb</a>
+            </section>
+        </header>
+        <main>
+            <h1>Hallo, ich hoffe Ihnen gefällt unser Impressum, COOL</h1>
+            <a href="tel:918054646">91805 4646</a>
+            <br>
+            <a href="mail:stefan@th-nuernberg.de">toy@store.de</a>
+            <br>
+            <a href="fax:918054646">Schicken Sie uns ein Fax</a>
+            <button type="button">
+                    <a href="index.html">Back 2 Index</a>
+            </button>
+        </main>
+        <footer>
+            <section id="disclaimer">
+                <a href="index.html">Home</a>
+            </section>
+            <section id="kontakt">
+                <ul>
+                    <li>ToyModels</li>
+                    <li>Stefan Kränzle</li>
+                    <li>0151 934848304</li>
+                </ul>
+            </section>
+        </footer>
     </body>
 </html>

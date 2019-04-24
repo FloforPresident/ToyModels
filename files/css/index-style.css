@@ -1,0 +1,69 @@
+/* Main Declarations */
+
+main{
+    margin: 5rem 0rem;
+}
+main nav{
+    width:100%;
+}
+main nav ul{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    height:3rem;
+    margin:0;
+    padding:0;
+}
+main nav ul li{
+    display:flex;
+    justify-self:space-around;
+    align-self:center;
+    width:100%;
+    height:100%;
+    cursor:pointer;
+    background-color: #f3f3f3;
+    border-right: .5px solid #6e9bc5
+}
+main #artikelAnzeige{
+    width:100%;
+    padding:2rem;
+}
+main .artikel{
+    width: 45%;
+    float:left;
+    background-color:#6e9bc5;
+    color:#ffffff;
+    margin:1rem;
+    position:relative;
+}
+main .artikel img, main .artikel ul{
+    float:left;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+main .artikel img{
+    width:33.33%;
+    height:auto;
+    padding-right:2rem;
+}
+main .artikel ul{
+    width:66.66%;
+}
+main .artikel ul li{
+    margin: .5rem;
+}
+main .artikel button{
+    position:absolute;
+    bottom:0;
+    right:0;
+    background-color: #9fb3c5;
+    padding:1rem;
+    border-style: none;
+    box-shadow:none;
+    color:#ffffff;
+    cursor:pointer;
+}
+main .artikel button:hover{
+    background-color:#6e9bc5;
+}

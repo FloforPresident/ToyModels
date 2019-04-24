@@ -2,33 +2,67 @@
 <html>
     <head>
         <title>Warenkorb</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/warenkorb-style.css">
         <meta charset="utf-8"> 
     </head>
     <body>
-        <h1>Hi ich bin Basti, ich betreue deinen Warenkorb</h1>
-
-        <section class="artikel">
+        <header>
+            <section>
+                <a href="index.html">
+                    <h1>Toy Models GmbH</h1>
+                </a>
+            </section>
+            <section id="suchfeld">
+                <!-- <label for="suche">Search</label>  -->
+                <input type="search" placeholder="Suche">
+            </section>  
+            <section id="signIn">
+                <button type="button">
+                        <a href="registrieren.html">Registrieren</a>
+                </button>
+                <button type="button">Anmelden</button>
+                <section id="eingaben">
+                    <input type="text" id="kundennummer" placeholder="Kundennummer">
+                    <input type="password" id="password" placeholder="Passwort">
+                </section>
+            </section>
+            <section id="warenkorb">
+                <a href="warenkorb.html">Warenkorb</a>
+            </section>
+        </header>
+        <main>
+            <h1>Hi ich bin Basti, ich betreue deinen Warenkorb</h1>
+            <section class="artikel">
                 <h3 class="name">Boing</h3>
                 <p class="artikelNummer">ArtNummer: 1</p>
                 <p class="preis">100&euro;</p>
                 <p class="menge">Menge: 1</p>
-        </section>
+            </section>
+            <section class="artikel">
+                    <h3 class="name">Titanic</h3>
+                    <p class="artikelNummer">ArtNummer: 2</p>
+                    <p class="preis">100&euro;</p>
+                    <p class="menge">Menge: 1</p>
+            </section>
 
-        <hr>
-
-        <section class="artikel">
-                <h3 class="name">Titanic</h3>
-                <p class="artikelNummer">ArtNummer: 2</p>
-                <p class="preis">100&euro;</p>
-                <p class="menge">Menge: 1</p>
-        </section>
-
-        <hr>
-
-        <p>GesamtPreis: 50000&euro;</p>
-        <button type="button">Zur Kasse</button>
-        <button type="button">
-            <a href="index.html">Zurueck zu unserem Angebot</a>
-        </button>
+            <p>GesamtPreis: 50000&euro;</p>
+            <button type="button">Zur Kasse</button>
+            <button type="button">
+                <a href="index.html">Zurueck zu unserem Angebot</a>
+            </button>
+        </main>
+        <footer>
+            <section id="disclaimer">
+                <a href="index.html">Home</a>
+            </section>
+            <section id="kontakt">
+                <ul>
+                    <li>ToyModels</li>
+                    <li>Stefan Kränzle</li>
+                    <li>0151 934848304</li>
+                </ul>
+            </section>
+        </footer>
     </body>
 </html>

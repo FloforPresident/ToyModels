@@ -1,3 +1,64 @@
+/* General Declarations */
+
 body{
     font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    position:relative;
+    overflow-x: hidden;
+    min-height:100%;
 }
+a{
+    text-decoration: none;
+    color: #000000;
+}
+ul li{
+    list-style-type: none;
+}
+
+/* Header Declarations */
+
+header{
+    background-color:#dfdfdf;
+    height:5rem;
+    width:100%;
+    position:fixed;
+    top:0;left:0;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    z-index:9999; 
+}
+header section{
+    float:left;
+}
+header #signIn{
+    cursor:pointer;
+    position:relative;
+}
+header #signIn #eingaben{
+    display:none;
+    position:absolute;
+    top:2;left:0;
+}
+header #signIn #eingaben input{
+    padding:1rem;
+}
+header #signIn:hover #eingaben{
+    display:block;
+}
+
+/* Footer Declarations */
+
+footer{
+    background-color:#dfdfdf;
+    display:flex;
+    width:100%;
+}
+footer section{
+    float:left;
+    margin: 0 auto;
+    display:flex;
+    align-self: center;
+}
+
