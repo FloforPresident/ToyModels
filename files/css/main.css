@@ -44,6 +44,16 @@ header #signIn #eingaben{
     display:none;
     position:absolute;
     top:2;left:0;
+    width: 15rem;
+    background-color: #FFF;
+    padding: 1rem;
+}
+header #signIn #eingaben a{
+    width: 15rem;
+    background-color: #FFF;
+    float:left;
+    padding-top: 1rem;
+    text-decoration: underline;
 }
 header #signIn #eingaben input{
     padding:1rem;
