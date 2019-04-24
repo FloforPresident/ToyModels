@@ -8,3 +8,10 @@
     margin: 1rem;
     cursor:pointer;
 }
+
+#warenkorbArtikel #drucken{
+    width: 10rem;
+    height: 3rem;
+    margin: 1rem;
+    cursor:pointer;
+}
