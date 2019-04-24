@@ -1,5 +1,11 @@
 main{
     margin: 7rem 2rem 7rem 2rem;
+}
 
-    background-color: black;
+main input{
+    margin: 4px 0 4px 0;
+}
+
+main section{
+    margin: 4px 0 4px 0;
 }
