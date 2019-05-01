@@ -61,6 +61,13 @@ header #signIn:hover #eingaben{
     display:block;
 }
 
+.Warenkorb_icon{
+    width: 2em;
+    height: 2em;
+    background: url("images/Warenkorb_icon.png")
+}
+
+
 /* Footer Declarations */
 
 footer{
