@@ -1,0 +1,67 @@
+main .artikel{
+    width: 88vw;
+    background-color:#6e9bc5;
+    color:#ffffff;
+    margin:1rem;
+    position:relative;
+    padding: 0.5em;
+}
+
+main .preis{
+    text-align:right;
+}
+
+main .Preisanzeige{
+    width: 88vw;
+}
+
+main td{
+    vertical-align: top;
+}
+main .artikel td a{
+    color: #CCC;
+}
+main .Preis{
+    text-align: right;
+}
+
+main #GesamtPreis{
+    width: 88vw;
+    margin:1rem;
+    padding:0.5em;
+}
+
+@media print{
+    main .artikel{
+        width: 88vw;
+        background-color: white;
+        color:black;
+        margin:1rem;
+        margin-bottom:0;
+        position:relative;
+        padding: 0.5em;
+        padding-bottom: 0;;
+        border-top-style: solid;
+        border-top-width: 0.5mm;
+    }
+    header{
+        background-color:#fff;
+        height:30mm;
+        width:100%;
+        position:fixed;
+        top:0;left:0;
+        display:flex;
+        justify-content: space-evenly;
+        align-items:center;
+        z-index:9999;
+    }
+    header #suchfeld, #signIn, #warenkorb, #eingaben {
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    main .printhidden{
+        visibility: hidden;
+    }
+}

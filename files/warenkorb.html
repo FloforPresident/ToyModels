@@ -32,23 +32,60 @@
         <main>
             <h1>Hi ich bin Basti, ich betreue deinen Warenkorb</h1>
             <section class="artikel">
-                <h3 class="name">Boing</h3>
-                <p class="artikelNummer">ArtNummer: 1</p>
-                <p class="preis">100&euro;</p>
-                <p class="menge">Menge: 1</p>
+                <table class="Preisanzeige">
+                    <tr>
+                        <td>
+                            <h3 class="name">Boing</h3>
+                            <p class="artikelNummer">ArtNummer: 1</p>
+                            <p class="menge">Menge: 1</p>
+                            <p class="entfernen"><a href="">x Entfernen</a></p>
+                        </td>
+                        <td class="Preis">
+                            <p class="preis">100&euro;</p>
+                        </td>
+                    </tr>
+                </table>
             </section>
             <section class="artikel">
-                    <h3 class="name">Titanic</h3>
-                    <p class="artikelNummer">ArtNummer: 2</p>
-                    <p class="preis">100&euro;</p>
-                    <p class="menge">Menge: 1</p>
+                <table class="Preisanzeige">
+                    <tr>
+                        <td>
+                            <h3 class="name">Titanic</h3>
+                            <p class="artikelNummer">ArtNummer: 2</p>
+                            <p class="menge">Menge: 1</p>
+                            <p class="entfernen"><a href="">x Entfernen</a></p>
+                        </td>
+                        <td>
+                            <p class="preis">100&euro;</p>
+                        </td>
+                    </tr>
+                </table>
             </section>
 
-            <p>GesamtPreis: 50000&euro;</p>
-            <button type="button">Zur Kasse</button>
-            <button type="button">
-                <a href="index.html">Zurueck zu unserem Angebot</a>
-            </button>
+            <section id="GesamtPreis">
+                <hr><hr>
+                <table class="Preisanzeige">
+                    <tr>
+                        <td>
+                            <p>GesamtPreis:</p>
+                        </td>
+                        <td class="Preis">
+                            <p>50000&euro;</p>
+                        </td>
+                    </tr>
+                    <tr><td>
+                        <p>&nbsp;</p>
+                    </td></tr>
+                    <tr class="printhidden">
+                        <td>
+                            <a href="index.html">&lt;&lt;&nbsp;Zurück zu unserem Angebot</a>
+                        </td>
+                        <td class="Preis">
+                            <button type="button">Zur Kasse</button>
+                        </td>
+                    </tr>
+                </table>
+            </section>
         </main>
         <footer>
             <section id="disclaimer">

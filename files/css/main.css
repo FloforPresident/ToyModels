@@ -15,9 +15,12 @@ a{
 ul li{
     list-style-type: none;
 }
+main{
+    margin: 7rem 2rem;
+}
 
 /* Header Declarations */
-
+        
 header{
     background-color:#dfdfdf;
     height:5rem;
