@@ -3,7 +3,6 @@
     <head>
         <title>Warenkorb</title>
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/index-style.css">
         <link rel="stylesheet" href="css/warenkorb-style.css">
         <meta charset="utf-8"> 
     </head>
@@ -27,49 +26,65 @@
                 </section>
             </section>
             <section id="warenkorb">
-                <a href="warenkorb.html" class="warenkorb"><img src='images/Warenkorb_icon.png' class="Warenkorb_icon" alt="Wdarenkorb"/></a>
+                <a href="warenkorb.html">Warenkorb</a>
             </section>
         </header>
         <main>
-            <section id="warenkorbArtikel">
-                <h2>Hi ich bin Basti, ich betreue deinen Warenkorb</h2>
-                <section class="artikel">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>100€</li>
-                        <li>Menge: 1</li>
-                    </ul>
-                    <button type="button">Entfernen</button>
-                </section>
-                <section class="artikel">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>100€</li>
-                        <li>Menge: 1</li>
-                    </ul>
-                    <button type="button">Entfernen</button>
-                </section>
-                <section class="artikel">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>100€</li>
-                        <li>Menge: 1</li>
-                    </ul>
-                    <button type="button">Entfernen</button>
-                </section>
-                <section class="artikel">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>100€</li>
-                        <li>Menge: 1</li>
-                    </ul>
-                    <button type="button">Entfernen</button>
-                </section>
-                <button id="kasse" type="button">Zur Kasse</button>
+            <h1>Hi ich bin Basti, ich betreue deinen Warenkorb</h1>
+            <section class="artikel">
+                <table class="Preisanzeige">
+                    <tr>
+                        <td>
+                            <h3 class="name">Boing</h3>
+                            <p class="artikelNummer">ArtNummer: 1</p>
+                            <p class="menge">Menge: 1</p>
+                            <p class="entfernen"><a href="">x Entfernen</a></p>
+                        </td>
+                        <td class="Preis">
+                            <p class="preis">100&euro;</p>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="artikel">
+                <table class="Preisanzeige">
+                    <tr>
+                        <td>
+                            <h3 class="name">Titanic</h3>
+                            <p class="artikelNummer">ArtNummer: 2</p>
+                            <p class="menge">Menge: 1</p>
+                            <p class="entfernen"><a href="">x Entfernen</a></p>
+                        </td>
+                        <td>
+                            <p class="preis">100&euro;</p>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="GesamtPreis">
+                <hr><hr>
+                <table class="Preisanzeige">
+                    <tr>
+                        <td>
+                            <p>GesamtPreis:</p>
+                        </td>
+                        <td class="Preis">
+                            <p>50000&euro;</p>
+                        </td>
+                    </tr>
+                    <tr><td>
+                        <p>&nbsp;</p>
+                    </td></tr>
+                    <tr class="printhidden">
+                        <td>
+                            <a href="index.html">&lt;&lt;&nbsp;Zurück zu unserem Angebot</a>
+                        </td>
+                        <td class="Preis">
+                            <button type="button">Zur Kasse</button>
+                        </td>
+                    </tr>
+                </table>
             </section>
         </main>
         <footer>
