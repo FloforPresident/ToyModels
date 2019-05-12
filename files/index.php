@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index-style.css">
         <meta charset="utf-8"> 
+
         <script type="text/javascript">
         function show_description(Bescreibung)
             {
@@ -15,30 +16,12 @@
                     obj.style.display='none';
                 }
             }
-        
         </script>
     </head>
     <body>
-        <header>
-            <section>
-                    <h1>Toy Models GmbH</h1>
-            </section>
-            <section id="suchfeld">
-                <input type="search" placeholder="Suche">
-                <button type="button">Suchen</button>
-            </section>  
-            <section id="signIn">
-                <button type="button">Anmelden</button>
-                <section id="eingaben">
-                    <input type="text" id="kundennummer" placeholder="Kundennummer">
-                    <input type="password" id="password" placeholder="Passwort">
-                    <a href="registrieren.html">Hier Registrieren</a>
-                </section>
-            </section>
-            <section id="warenkorb">
-                <a href="warenkorb.html" class="warenkorb"><img src='images/Warenkorb_icon.png' class="Warenkorb_icon" alt="Wdarenkorb"/></a>
-            </section>
-        </header>    
+                
+        <?php include "header.php" ?>
+
         <main class="artikelAnzeige">
             <nav id="artikelAuswahl">
                 <ul>
@@ -124,17 +107,8 @@
                 </section>
             </section>
         </main>
-        <footer>
-            <section id="disclaimer">
-                <a href="impressum.html">Impressum</a>
-            </section>
-            <section id="kontakt">
-                <ul>
-                    <li>ToyModels</li>
-                    <li>Stefan Kränzle</li>
-                    <li>0151 934848304</li>
-                </ul>
-            </section>
-        </footer>
+
+        <?php include "footer.php" ?>
+
     </body>
 </html>

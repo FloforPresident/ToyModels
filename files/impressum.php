@@ -7,28 +7,9 @@
         <meta charset="utf-8"> 
     </head>
     <body>
-    <header>
-            <section>
-                    <a href="index.html">
-                        <h1>Toy Models GmbH</h1>
-                    </a>
-            </section>  
-            <section id="suchfeld">
-                <input type="search" placeholder="Suche">
-                <button type="button">Suchen</button>
-            </section>  
-            <section id="signIn">
-                <button type="button">Anmelden</button>
-                <section id="eingaben">
-                    <input type="text" id="kundennummer" placeholder="Kundennummer">
-                    <input type="password" id="password" placeholder="Passwort">
-                    <a href="registrieren.html">Hier Registrieren</a>
-                </section>
-            </section>
-            <section id="warenkorb">
-                <a href="warenkorb.html" class="warenkorb"><img src='images/Warenkorb_icon.png' class="Warenkorb_icon" alt="Wdarenkorb"/></a>
-            </section>  
-        </header>
+
+        <?php include "header.php" ?>
+
         <main>
             <!-- a href="tel:918054646">91805 4646</a>
                 <br>
@@ -61,17 +42,8 @@
                     Musteraufsicht Musterstadt<br></p><br> 
                  </div>
         </main>
-        <footer>
-            <section id="disclaimer">
-                <a href="index.html">Home</a>
-            </section>
-            <section id="kontakt">
-                <ul>
-                    <li>ToyModels</li>
-                    <li>Stefan Kränzle</li>
-                    <li>0151 934848304</li>
-                </ul>
-            </section>
-        </footer>
+
+        <?php include "footer.php" ?>
+        
     </body>
 </html>
