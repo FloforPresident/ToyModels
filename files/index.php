@@ -2,21 +2,11 @@
 <html>
     <head>
         <title>Index Site</title>
+        <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+        <script src="js/main.js"></script>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index-style.css">
-        <meta charset="utf-8"> 
-
-        <script type="text/javascript">
-        function show_description(Bescreibung)
-            {
-                obj = document.getElementById('Beschreibung1');
-                if(obj.style.display=='none'){
-                    obj.style.display='block';
-                } else{
-                    obj.style.display='none';
-                }
-            }
-        </script>
+        <meta charset="utf-8">
     </head>
     <body>
                 

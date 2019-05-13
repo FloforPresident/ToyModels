@@ -71,6 +71,9 @@ main .artikel input{
 #Beschreibung1{
     display:none;
 }
+.beschreibung1-2{
+    display:block !important;
+}
 main .artikel button{
     position:relative;
     /* bottom:0;

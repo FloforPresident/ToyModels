@@ -4,6 +4,7 @@
         <title>Impressum</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/impressum-style.css">
+        <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
         <meta charset="utf-8"> 
     </head>
     <body>
