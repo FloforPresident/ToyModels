@@ -1,14 +1,11 @@
-function show_description(Bescreibung)
-{
-    obj = document.getElementById('Beschreibung1');
-    if(obj.style.display=='none'){
-        obj.style.display='block';
-    } else{
-        obj.style.display='none';
-    }
-}
-// $(document).ready(function(){
-//     $('.artikel').on('click', function(){
-//         $(this).find('ul #Beschreibung1').addClass("beschreibung1-2");
-//     })
-// })
+$(document).ready(function(){
+    $('.artikel').on('click', function(){
+        var beschreibung = $('.artikel ul .beschreibung');
+        if(beschreibung.hasClass("hidden")){
+            beschreibung.removeClass("hidden");
+        }
+        else{
+            beschreibung.addClass("hidden");
+        }
+    })
+})

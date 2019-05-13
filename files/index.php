@@ -4,6 +4,10 @@
         <title>Index Site</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index-style.css">
+
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/main.js"></script>
+
         <meta charset="utf-8"> 
 
         <?php include "connect.php"; ?>
@@ -28,9 +32,9 @@
                 <section class="artikel">
                     <img src="images/boing.png">
                     <ul>
-                        <li><h2><a onclick="show_description(Beschreibung1)">Boing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100€</a></h2></li>
+                        <li><h2>Boing</h2></li>
                         <li>ArtNummer: 1</li>
-                        <li id="Beschreibung1">Beschreibung:<br> Hier steht eine Beschreibung Bla Bla Bla</li>
+                        <li class="beschreibung hidden">Hier steht eine Beschreibung Bla Bla Bla</li>
                         <li class="textcentered"><label>Anzahl:</label>&nbsp;&nbsp;&nbsp;<input type="number" placeholder="1"></input></li>
                     </ul>
                     <button type="button">In den Warenkorb</button>

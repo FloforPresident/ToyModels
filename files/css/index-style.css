@@ -68,17 +68,13 @@ main .artikel ul li{
 main .artikel input{
     width:3em;
 }
-#Beschreibung1{
+.beschreibung.hidden{
     display:none;
 }
-.beschreibung1-2{
-    display:block !important;
-}
 main .artikel button{
-    position:relative;
-    /* bottom:0;
-    right:0; */
-    bottom:inherit;
+    position:absolute;
+    bottom:0;
+    right:0;
     background-color: #9fb3c5;
     padding:1rem;
     border-style: none;
