@@ -68,9 +68,13 @@ main .artikel ul li{
 main .artikel input{
     width:3em;
 }
+
+/* Beschreibung aufpoppen */
 .beschreibung.hidden{
     display:none;
 }
+
+
 main .artikel button{
     position:absolute;
     bottom:0;

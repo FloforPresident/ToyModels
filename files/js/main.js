@@ -1,11 +1,13 @@
 $(document).ready(function(){
     $('.artikel').on('click', function(){
-        var beschreibung = $('.artikel ul .beschreibung');
+        var beschreibung = $(this).find('ul .beschreibung');
         if(beschreibung.hasClass("hidden")){
             beschreibung.removeClass("hidden");
         }
         else{
             beschreibung.addClass("hidden");
         }
+
+        
     })
 })
