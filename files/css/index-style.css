@@ -49,6 +49,9 @@ main .artikel{
     margin:1rem;
     position:relative;
 }
+main #artikel1{
+    cursor: pointer;
+}
 main .artikel img, main .artikel ul{
     float:left;
     margin:0;
@@ -72,9 +75,6 @@ main .artikel input{
     display:none;
 }
 main .artikel button{
-    position:absolute;
-    bottom:0;
-    right:0;
     background-color: #9fb3c5;
     padding:1rem;
     border-style: none;
@@ -82,6 +82,14 @@ main .artikel button{
     color:#ffffff;
     cursor:pointer;
     float: right;
+}
+.inWarenkorb{
+    position:absolute;
+    bottom:0;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main .artikel button:hover{
     transition: background-color 0.5s ease;
