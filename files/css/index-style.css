@@ -46,6 +46,7 @@ main .artikel{
     float:left;
     background-color:#6e9bc5;
     color:#ffffff;
+    padding: 0 1rem 7rem 1rem;
     margin:1rem;
     position:relative;
 }

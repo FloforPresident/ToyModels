@@ -30,13 +30,13 @@
 
             <section id="artikelAnzeige">
                 <section class="artikel">
-                    <img src="images/boing.png">
                     <ul>
                         <li><h2 id="artikel1">Boing</h2></li>
                         <li>ArtNummer: 1</li>
-                        <li class="beschreibung hidden">Hier steht eine Beschreibung Bla Bla Bla</li>
+                        <li>Preis: 100€</li>
+                        <li class="beschreibung hidden">Hier steht eine Beschreibung Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla</li>
                     </ul>
-                    <section class="inWarenkorb"><label>Anzahl:</label>&nbsp;&nbsp;&nbsp;<input type="number" placeholder="1" />&nbsp;&nbsp;<button type="button">In den Warenkorb</button></section>
+                    <section class="inWarenkorb"><label>Anzahl:</label>&nbsp;&nbsp;&nbsp;<input type="number" min="1" placeholder="1" />&nbsp;&nbsp;<button type="button">In den Warenkorb</button></section>
                 </section>
                 <section class="artikel">
                     <img src="images/boing.png">
