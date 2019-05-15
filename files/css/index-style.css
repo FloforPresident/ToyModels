@@ -43,7 +43,7 @@ main #artikelAnzeige a{
 }
 main .artikel{
     width: 44%;
-    float:left;
+    /* float:left; */
     background-color:#6e9bc5;
     color:#ffffff;
     padding: 0 1rem 7rem 1rem;

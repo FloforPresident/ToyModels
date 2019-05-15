@@ -20,7 +20,9 @@
         <main class="artikelAnzeige">
             <nav id="artikelAuswahl">
                 <ul>
-                    <li>All</li>
+                    <li>All</li>    
+
+                    <!-- Warengruppen aus Datenbank auslesen -->
                     <?php
                         $warGrupp = "SELECT * FROM warengruppen";  //hier auch WHERE Befehl möglich 
                         foreach($pdo->query($warGrupp) as $col)
@@ -30,6 +32,10 @@
                     ?>
                 </ul>
             </nav>
+
+            <?php
+                $artikel = "SELECT * FROM artikel";
+            ?>
 
             <section id="artikelAnzeige">
                 <section class="artikel">
@@ -41,7 +47,20 @@
                     </ul>
                     <section class="inWarenkorb"><label>Anzahl:</label>&nbsp;&nbsp;&nbsp;<input type="number" min="1" placeholder="1" />&nbsp;&nbsp;<button type="button">In den Warenkorb</button></section>
                 </section>
-                <section class="artikel">
+
+
+                <!-- <section class="artikel">
+                    <img src="images/boing.png">
+                    <ul>
+                        <li><h2>Boing</h2></li>
+                        <li>ArtNummer: 1</li>
+                        <li>Beschreibung: Cool</li>
+                        <li>100€</li>
+                    </ul>
+                    <button type="button">In den Warenkorb</button>
+                </section> -->
+
+                <!-- <section class="artikel">
                     <img src="images/boing.png">
                     <ul>
                         <li><h2>Boing</h2></li>
@@ -90,18 +109,8 @@
                         <li>100€</li>
                     </ul>
                     <button type="button">In den Warenkorb</button>
-                </section>
-                <section class="artikel">
-                    <img src="images/boing.png">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Beschreibung: Cool</li>
-                        <li>100€</li>
-                    </ul>
-                    <button type="button">In den Warenkorb</button>
-                </section>
-            </section>
+                </section>-->
+            </section> 
         </main>
 
         <?php
