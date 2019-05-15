@@ -43,13 +43,16 @@ main #artikelAnzeige a{
 }
 main .artikel{
     width: 44%;
-    /* float:left; */
+    float:left;
     background-color:#6e9bc5;
     color:#ffffff;
     padding: 0 1rem 7rem 1rem;
     margin:1rem;
     position:relative;
+    display: block;
 }
+
+
 main #artikel1{
     cursor: pointer;
 }
@@ -64,7 +67,7 @@ main .artikel img{
     height:auto;
 }
 main .artikel ul{
-    width:66.66%;
+    width:66%;
 }
 main .artikel ul li{
     margin: .5rem;

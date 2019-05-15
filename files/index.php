@@ -38,90 +38,40 @@
             ?>
 
             <section id="artikelAnzeige">
-                <section class="artikel">
-                    <ul>
-                        <li><h2 id="artikel1">Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Preis: 100€</li>
-                        <li class="beschreibung hidden">Hier steht eine Beschreibung Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla</li>
-                    </ul>
-                    <section class="inWarenkorb"><label>Anzahl:</label>&nbsp;&nbsp;&nbsp;<input type="number" min="1" placeholder="1" />&nbsp;&nbsp;<button type="button">In den Warenkorb</button></section>
-                </section>
+                <?php
+                    foreach($pdo->query($artikel) as $col)
+                    {
+                    echo("<section class='artikel'>");
+                        echo("<ul>");
+                        echo("<li><h3 id='artikel1'><br/>".$col["ArtikelName"]."<h3></li>");
+                        echo("<li>Productnumber: ".$col["ArtikelNr"]."</li>");
+                        echo("<li>Price: ".$col["Listenpreis"]." €</li>");
+                        echo("<li class='beschreibung hidden'>".$col["Beschreibung"]."</li>");
+                        echo("</ul>");
+                        echo("<section class='inWarenkorb'>
+                            <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
+                            <input type='number' min='1' placeholder='1' />&nbsp;&nbsp;
+                            <button type='button'>In den Warenkorb</button>
+                        </section>");
+                    echo("</section>");
+                    }
+                ?>
+            </section>
 
 
                 <!-- <section class="artikel">
                     <img src="images/boing.png">
                     <ul>
-                        <li><h2>Boing</h2></li>
+                        <li><h2>test</h2></li>
                         <li>ArtNummer: 1</li>
                         <li>Beschreibung: Cool</li>
                         <li>100€</li>
                     </ul>
                     <button type="button">In den Warenkorb</button>
                 </section> -->
-
-                <!-- <section class="artikel">
-                    <img src="images/boing.png">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Beschreibung: Cool</li>
-                        <li>100€</li>
-                    </ul>
-                    <button type="button">In den Warenkorb</button>
-                </section>
-                <section class="artikel">
-                    <img src="images/boing.png">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Beschreibung: Cool</li>
-                        <li>100€</li>
-                    </ul>
-                    <button type="button">In den Warenkorb</button>
-                </section>
-                <section class="artikel">
-                    <img src="images/boing.png">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Beschreibung: Cool</li>
-                        <li>100€</li>
-                    </ul>
-                    <button type="button">In den Warenkorb</button>
-                </section>
-                <section class="artikel">
-                    <img src="images/boing.png">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Beschreibung: Cool</li>
-                        <li>100€</li>
-                    </ul>
-                    <button type="button">In den Warenkorb</button>
-                </section>
-                <section class="artikel">
-                    <img src="images/boing.png">
-                    <ul>
-                        <li><h2>Boing</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Beschreibung: Cool</li>
-                        <li>100€</li>
-                    </ul>
-                    <button type="button">In den Warenkorb</button>
-                </section>-->
+                
             </section> 
         </main>
-
-        <?php
-            $sql = "SELECT * FROM warengruppen";
-            foreach ($pdo->query($sql) as $row) {
-            echo $row['GruppenNr']."<br />";    //echo = ausgeben
-            echo $row['GruppenName']."<br />";
-            echo $row['Beschreibung']."<br /><br />";
-            }
-        ?>
-
         <?php include "footer.php" ?>
 
     </body>
