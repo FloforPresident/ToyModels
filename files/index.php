@@ -20,11 +20,14 @@
         <main class="artikelAnzeige">
             <nav id="artikelAuswahl">
                 <ul>
-                    <li>Alle</li>
-                    <li>Autos</li>
-                    <li>Züge</li>
-                    <li>Schiffe</li>
-                    <li>Flugzeuge</li>
+                    <li>All</li>
+                    <?php
+                        $warGrupp = "SELECT * FROM warengruppen";  //hier auch WHERE Befehl möglich 
+                        foreach($pdo->query($warGrupp) as $col)
+                        {
+                           echo("<li>".$col["GruppenName"]."</li>");
+                        }
+                    ?>
                 </ul>
             </nav>
 
