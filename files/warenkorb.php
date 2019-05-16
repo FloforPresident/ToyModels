@@ -62,7 +62,7 @@
                     </td></tr>
                     <tr class="printhidden">
                         <td>
-                            <a href="index.html">&lt;&lt;&nbsp;Zurück zu unserem Angebot</a>
+                            <a href="index.php">&lt;&lt;&nbsp;Zurück zu unserem Angebot</a>
                         </td>
                         <td class="Preis">
                             <button type="button">Zur Kasse</button>

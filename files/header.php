@@ -26,7 +26,7 @@
                         }
                     ?>
                     <section id="eingaben">
-                        <input type="text" id="kundennummer" placeholder="Kundennummer">
+                        <input type="text" id="kundennummer" placeholder="Kundennummer"><br><br>
                         <input onclick='loggingIn(this.form)' type='button' value='Login'/>
 
                         
