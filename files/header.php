@@ -25,10 +25,10 @@
                         //    echo("<input onclick='check(this.form)' type='button' value='Login'/>");
                         }
                     ?>
-                   
                     <section id="eingaben">
                         <input type="text" id="kundennummer" placeholder="Kundennummer">
-                        <input type="password" id="password" placeholder="Passwort">
+                        <input onclick='loggingIn(this.form)' type='button' value='Login'/>
+
                         
                         <a href="registrieren.php">Hier Registrieren</a>
                     </section>

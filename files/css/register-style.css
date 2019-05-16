@@ -5,3 +5,7 @@ main input{
 main section{
     margin: 4px 0 4px 0;
 }
+
+td{
+    width: 10em;
+}
