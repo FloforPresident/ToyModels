@@ -1,5 +1,6 @@
 <?php include "connect.php"; ?>
-
+<script src="js/main.js"></script>
+<script src="js/login.js"></script>
 <header>
             <section>
                 <a href="index.php">
@@ -15,7 +16,8 @@
                 
                 <form name="login">
 
-                    <input onclick='loggingIn(this.form)' type='button' value='Login'/>
+                    <!--loggingIn(this.form) wird erst ausgeführt wenn checkkid true liefert -->
+                    <input onclick='return checkkid() && loggingIn(this.form)' type='button' value='Login'/> 
                     <?php 
                     $kunden = "SELECT * FROM kunden"; 
                     foreach($pdo->query($kunden) as $col)
@@ -26,10 +28,8 @@
                         }
                     ?>
                     <section id="eingaben">
-                        <input type="text" id="kundennummer" placeholder="Kundennummer"><br><br>
-                        <input onclick='loggingIn(this.form)' type='button' value='Login'/>
-
-                        
+                        <input type="text" id="kundennummer" name="kid" placeholder="Kundennummer"><br><br>
+                        <input onclick='return checkkid() && loggingIn(this.form)' type='button' value='Login'/>    
                         <a href="registrieren.php">Hier Registrieren</a>
                     </section>
                     

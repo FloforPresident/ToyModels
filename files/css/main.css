@@ -17,6 +17,9 @@ ul li{
 main{
     margin: 7rem 2rem;
 }
+.inputinvalid{
+    border: 1px solid red;
+}
 
 /* Header Declarations */
         
