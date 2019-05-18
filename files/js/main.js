@@ -1,16 +1,26 @@
 
-$(document).ready(function(){
-    $('#artikel1').on('click', function(){
-        var beschreibung = $('.artikel ul .beschreibung');
-        if(beschreibung.hasClass("hidden")){
-            beschreibung.removeClass("hidden");
-        }
-        else{
-            beschreibung.addClass("hidden");
-        }
-    })
-})
-
+// $(document).ready(function(){
+//     $('#artikel1').on('click', function(){
+//         var beschreibung = $('.artikel ul .beschreibung');
+//         if(beschreibung.hasClass("hidden")){
+//             beschreibung.removeClass("hidden");
+//         }
+//         else{
+//             beschreibung.addClass("hidden");
+//         }
+//     })
+// })
+//Beschreibung ausklappen
+// function showDescription(element){
+//     element.ch
+//     element.classList.remove('hidden');
+    // if(element.classList.contains("hidden")){
+    //     element.classList.remove("hidden");
+    // }
+    // else{
+    //     element.classList.add("hidden");
+    // }
+// }
 
 //Formularvalidierung Anmelden
 function checkkid(){

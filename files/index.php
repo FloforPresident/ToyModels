@@ -43,7 +43,7 @@
                 <?php
                     foreach($pdo->query($artikel) as $col)
                     {
-                    echo("<section class='artikel'>");
+                    echo("<section class='artikel' onclick='showDescription(this)'>");
                         echo("<ul>");
                         echo("<li><h3 id='artikel1'><br/>".$col["ArtikelName"]."<h3></li>");
                         echo("<li>Productnumber: ".$col["ArtikelNr"]."</li>");

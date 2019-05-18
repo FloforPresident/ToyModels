@@ -35,7 +35,7 @@ main nav ul li:hover{
 }
 main #artikelAnzeige{
     width:100%;
-    padding:2rem;
+    padding-top:1rem;
 }
 main #artikelAnzeige a{
     cursor: pointer;
@@ -66,9 +66,7 @@ main .artikel img{
     width:33.33%;
     height:auto;
 }
-main .artikel ul{
-    width:66%;
-}
+
 main .artikel ul li{
     margin: .5rem;
 }
