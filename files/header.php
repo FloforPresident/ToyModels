@@ -8,8 +8,10 @@
                 </a>
             </section>  
             <section id="suchfeld">
-                <input type="search" placeholder="Suche">
-                <button type="button">Suchen</button>
+                    <form action="suche.php" method="post">
+                    <input type="search" name="suchbegriff" placeholder="Suche">
+                    <button type="submit">Suchen</button>
+                </form
             </section>  
 
             <section id="signIn">
