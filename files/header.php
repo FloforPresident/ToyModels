@@ -1,6 +1,5 @@
 <?php include "connect.php"; ?>
 <script src="js/main.js"></script>
-<script src="js/login.js"></script>
 <header>
             <section>
                 <a href="index.php">
@@ -11,30 +10,41 @@
                     <form action="suche.php" method="post">
                     <input type="search" name="suchbegriff" placeholder="Suche">
                     <button type="submit">Suchen</button>
-                </form
+                </form>
             </section>  
 
             <section id="signIn">
                 
-                <form name="login">
-
-                    <!--loggingIn(this.form) wird erst ausgeführt wenn checkkid true liefert -->
-                    <input onclick='return checkkid() && loggingIn(this.form)' type='button' value='Login'/> 
-                    <?php 
-                    $kunden = "SELECT * FROM kunden"; 
-                    foreach($pdo->query($kunden) as $col)
-                        {
-                        //    echo("<li>".$col["KundenNr"]."</li>");
-                        //    echo("<input onclick='check(this.form, ".$col['KundenNr'].")' type='button' value='Login'/>")
-                        //    echo("<input onclick='check(this.form)' type='button' value='Login'/>");
-                        }
-                    ?>
-                    <section id="eingaben">
-                        <input type="text" id="kundennummer" name="kid" placeholder="Kundennummer"><br><br>
-                        <input onclick='return checkkid() && loggingIn(this.form)' type='button' value='Login'/>    
-                        <a href="registrieren.php">Hier Registrieren</a>
+                <form action="index.php" method="post" name="login">
+                    <input name="anmelden" type='submit' value='Login'/> 
+                    <section id='eingaben'>
+                        <input type='text' name='kundennummer' placeholder='Kundennummer'><br><br>
+                        <input name="anmelden" type='submit' value='Login'/>    
+                        <a href='registrieren.php'>Hier Registrieren</a>
                     </section>
+                <?php                   
+
+                    if(isset($_POST['anmelden']))
+                    {
+                        $kundennummer = $_POST['kundennummer'];
+                        $found = FALSE;
+
+                        $searchID = "SELECT KundenNr FROM kunden";  //hier auch WHERE Befehl möglich 
+                        foreach($pdo->query($searchID) as $col)
+                        {
+                           if($col["KundenNr"] == $kundennummer)
+                           {
+                                echo "Wilkommen";
+                                $found = True;
+                           }
+                        }
+                        if($found == false)
+                        {
+                            echo "ID nicht vorhanden";
+                        }
+                    }
                     
+                ?>
                 </form>
             </section>
 

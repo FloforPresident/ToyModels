@@ -106,3 +106,8 @@ function checkformular()
         alert(fehlermeldung);
     }
 }
+
+function alertID()
+{
+    alert("Wrong ID")
+}
