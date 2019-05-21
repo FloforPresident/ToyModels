@@ -1,4 +1,30 @@
 <?php include "connect.php"; ?>
+<?php
+session_start();
+
+if(isset($_POST['anmelden']))
+{
+    $kundennummer = $_POST['kundennummer'];
+    $found = FALSE;
+    $searchID = "SELECT KundenNr FROM kunden";  //hier auch WHERE Befehl möglich
+    
+    
+    foreach($pdo->query($searchID) as $col)
+    {
+        if($col["KundenNr"] == $kundennummer)
+        {
+            $_SESSION['login_user'] = $kundennummer;
+            echo "Wilkommen";
+            $found = True;
+        }
+    }
+    if($found == false)
+    {
+        echo "ID nicht vorhanden";
+    }
+}
+    
+?>
 <script src="js/main.js"></script>
 <header>
             <section>
@@ -22,29 +48,6 @@
                         <input name="anmelden" type='submit' value='Login'/>    
                         <a href='registrieren.php'>Hier Registrieren</a>
                     </section>
-                <?php                   
-
-                    if(isset($_POST['anmelden']))
-                    {
-                        $kundennummer = $_POST['kundennummer'];
-                        $found = FALSE;
-
-                        $searchID = "SELECT KundenNr FROM kunden";  //hier auch WHERE Befehl möglich 
-                        foreach($pdo->query($searchID) as $col)
-                        {
-                           if($col["KundenNr"] == $kundennummer)
-                           {
-                                echo "Wilkommen";
-                                $found = True;
-                           }
-                        }
-                        if($found == false)
-                        {
-                            echo "ID nicht vorhanden";
-                        }
-                    }
-                    
-                ?>
                 </form>
             </section>
 

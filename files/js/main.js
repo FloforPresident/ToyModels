@@ -14,12 +14,12 @@
 // function showDescription(element){
 //     element.ch
 //     element.classList.remove('hidden');
-    // if(element.classList.contains("hidden")){
-    //     element.classList.remove("hidden");
-    // }
-    // else{
-    //     element.classList.add("hidden");
-    // }
+//     if(element.classList.contains("hidden")){
+//         element.classList.remove("hidden");
+//     }
+//     else{
+//         element.classList.add("hidden");
+//     }
 // }
 
 //Formularvalidierung Anmelden
