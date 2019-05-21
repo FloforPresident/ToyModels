@@ -1,15 +1,3 @@
-
-// $(document).ready(function(){
-//     $('#artikel1').on('click', function(){
-//         var beschreibung = $('.artikel ul .beschreibung');
-//         if(beschreibung.hasClass("hidden")){
-//             beschreibung.removeClass("hidden");
-//         }
-//         else{
-//             beschreibung.addClass("hidden");
-//         }
-//     })
-// })
 //Beschreibung ausklappen
 function showDescription(element){
     if(element.classList.contains("hidden")){
