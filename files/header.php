@@ -13,7 +13,7 @@ if(isset($_POST['anmelden']))
     {
         if($col["KundenNr"] == $kundennummer)
         {
-            $_SESSION['login_user'] = $kundennummer;
+            // $_SESSION['login_user'] = $kundennummer;
             echo "Wilkommen";
             $found = True;
         }

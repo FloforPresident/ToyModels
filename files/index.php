@@ -38,12 +38,12 @@
                 <?php
                     foreach($pdo->query($artikel) as $col)
                     {
-                    echo("<section class='artikel ".$col["GruppenNr"]."' onclick='showDescription(this)'>");
+                    echo("<section class='artikel hidden ".$col["GruppenNr"]."' onclick='showDescription(this)'>");
                         echo("<ul>");
                         echo("<li><h3 id='artikel1'><br/>".$col["ArtikelName"]."<h3></li>");
                         echo("<li>Productnumber: ".$col["ArtikelNr"]."</li>");
                         echo("<li>Price: ".$col["Listenpreis"]." €</li>");
-                        echo("<li class='beschreibung hidden'>".$col["Beschreibung"]."</li>");
+                        echo("<li class='beschreibung'>".$col["Beschreibung"]."</li>");
                         echo("</ul>");
                         
                         echo("<section class='inWarenkorb'>

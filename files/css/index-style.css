@@ -72,7 +72,7 @@ main .artikel ul li{
 main .artikel input{
     width:3em;
 }
-.beschreibung.hidden{
+.artikel.hidden .beschreibung {
     display:none;
 }
 main .artikel button{

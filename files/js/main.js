@@ -11,16 +11,14 @@
 //     })
 // })
 //Beschreibung ausklappen
-// function showDescription(element){
-//     element.ch
-//     element.classList.remove('hidden');
-//     if(element.classList.contains("hidden")){
-//         element.classList.remove("hidden");
-//     }
-//     else{
-//         element.classList.add("hidden");
-//     }
-// }
+function showDescription(element){
+    if(element.classList.contains("hidden")){
+        element.classList.remove("hidden");
+    }
+    else{
+        element.classList.add("hidden");
+    }
+}
 
 //Formularvalidierung Anmelden
 function checkkid(){
