@@ -3,8 +3,15 @@
 main{
     margin: 5rem 0rem;
 }
+
+/* Navigation */
 main nav{
     width:100%;
+    z-index:998;
+    position:fixed;
+}
+main nav img{
+    display:none;
 }
 main nav ul{
     display:flex;
@@ -15,7 +22,6 @@ main nav ul{
 main nav ul li{
     display:flex;
     width:100%;
-    height:100%;
     cursor:pointer;
     background-color: #f3f3f3;
     border-right: .5px solid #6e9bc5;
@@ -31,29 +37,54 @@ main nav ul li:hover{
                 color 0.5s ease;
     -webkit-transition: background-color 0.5s ease,
                         color 0.5s ease;
-    background-color: #FF0000;    
+    background-color: #888;    
 }
+@media (max-width: 1080px){
+    main nav{
+        top:0;
+        background-color: palevioletred;
+    }
+    main nav img{
+        display:block;
+    }
+    main nav ul{
+        flex-direction: column;
+        display:none;
+    }
+    main nav.shown ul{
+        display:block;
+    }
+    main nav ul li{
+        padding:1.5rem;
+        justify-content: flex-start;
+        z-index: 1;
+        border-bottom:1px solid grey;
+    }
+    main nav ul li:last-child{
+        border-bottom:none;
+    }
+}
+
+/* Artikelanzeige */
 main #artikelAnzeige{
     width:100%;
-    padding-top:1rem;
+    padding-top:3rem;
 }
 main #artikelAnzeige a{
     cursor: pointer;
     color: white;
 }
+
+/* Artikel-Detail */
 main .artikel{
-    width: 44%;
+    width: calc(50% - 4rem);
     float:left;
     background-color:#6e9bc5;
     color:#ffffff;
     padding: 0 1rem 7rem 1rem;
     margin:1rem;
     position:relative;
-}
-
-
-main #artikel1{
-    cursor: pointer;
+    border-radius: 15px;
 }
 main .artikel img, main .artikel ul{
     float:left;
@@ -83,6 +114,7 @@ main .artikel button{
     color:#ffffff;
     cursor:pointer;
     float: right;
+    border-radius: 0 0 15px 0;
 }
 .inWarenkorb{
     position:absolute;
@@ -103,13 +135,13 @@ main .artikel button:hover{
     display:none;
 }
 
-/* Media Queries */
+/* main Media Queries */
 @media (max-width: 800px){
     body{
         font-size: 15px; 
     }
     main .artikel{
-        width:85%;
+        width: calc(100% - 4rem);
     }
 }
 @media (max-width: 550px){
@@ -120,4 +152,7 @@ main .artikel button:hover{
     main .artikel ul{
         width:100%;
     }
+}
+@media(max-width: 700px){
+    main{margin:0;}
 }

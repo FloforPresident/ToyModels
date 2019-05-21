@@ -21,6 +21,7 @@
 
         <main class="artikelAnzeige">
             <nav id="artikelAuswahl">
+                <img onclick="menu_clicked(this)" src="images/menu_button.png"/>
                 <ul>
                     <li onclick=showGroup(1000)>All</li>    
                     <!-- Warengruppen aus Datenbank auslesen -->

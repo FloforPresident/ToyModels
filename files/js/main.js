@@ -105,3 +105,14 @@ function showGroup(group_nr){
         }  
      }
 }
+
+//Menü responsive
+function menu_clicked(element){
+    var list = element.parentElement;
+    if(list.classList.contains("shown")){
+        list.classList.remove("shown")
+    }
+    else{
+        list.classList.add("shown")
+    }
+}

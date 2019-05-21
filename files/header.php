@@ -9,9 +9,9 @@
 
 <header>
             <section>
-                <a href="index.php">
-                    <h1>Toy Models GmbH</h1>
-                </a>
+                <h1>
+                    <a href="index.php">Toy Models GmbH</a>
+                </h1>
             </section>  
             <section id="suchfeld">
                     <form action="suche.php" method="post">
@@ -23,7 +23,7 @@
             <section id="signIn">
                 
                 <form id="loginForm" action="" method="post" name="login">
-                    <a href="#">Login</a> 
+                    <button>Login</button> 
                     <section id='eingaben'>
                         <input type='text' name='kundennummer' placeholder='Kundennummer'><br><br>
                         <input name="anmelden" type='submit' value='Login'/>    
@@ -59,6 +59,8 @@
                                 $found = True;
 
                                 header("Location:welcome.php"); 
+
+                            
                             }
                         }
                         if($found == false)
@@ -73,6 +75,8 @@
 
 
             <section id="warenkorb">
-                <a href="warenkorb.php">Warenkorb</a>
+                <a href="warenkorb.php">
+                    <img width="40px" src="images/warenkorb_white.png"/>
+                </a>
             </section>
         </header> 
