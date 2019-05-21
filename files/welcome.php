@@ -14,11 +14,12 @@
 
         <?php include "connect.php"; ?>
         <?php include "header.php" ?>
-
-
     </head>
     <body>  
-
+    <script type="text/javascript">
+        loggedIn();
+        alert("ja");
+    </script>
         <main>
             <h1>Welcome to ToyModels</h1>
             <h2>Have a look what we have to offer</h2>

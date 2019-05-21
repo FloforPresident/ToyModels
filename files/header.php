@@ -1,31 +1,12 @@
-<?php include "connect.php"; ?>
 <?php
-session_start();
-
-if(isset($_POST['anmelden']))
-{
-    $kundennummer = $_POST['kundennummer'];
-    $found = FALSE;
-    $searchID = "SELECT KundenNr FROM kunden";  //hier auch WHERE Befehl möglich
-    
-    
-    foreach($pdo->query($searchID) as $col)
-    {
-        if($col["KundenNr"] == $kundennummer)
-        {
-            // $_SESSION['login_user'] = $kundennummer;
-            echo "Wilkommen";
-            $found = True;
-        }
-    }
-    if($found == false)
-    {
-        echo "ID nicht vorhanden";
-    }
-}
-    
+    session_start();
 ?>
-<script src="js/main.js"></script>
+<head>
+    <?php include "connect.php"; ?>
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
 <header>
             <section>
                 <a href="index.php">
@@ -41,13 +22,52 @@ if(isset($_POST['anmelden']))
 
             <section id="signIn">
                 
-                <form action="" method="post" name="login">
+                <form id="loginForm" action="" method="post" name="login">
                     <a href="#">Login</a> 
                     <section id='eingaben'>
                         <input type='text' name='kundennummer' placeholder='Kundennummer'><br><br>
                         <input name="anmelden" type='submit' value='Login'/>    
                         <a href='registrieren.php'>Hier Registrieren</a>
                     </section>
+
+                    <?php
+                    if(isset($_SESSION["login_user"]) == true)
+                    {
+                        echo "Willkommen ";
+                        echo $_SESSION["login_user"];
+                    }
+                    //session_start();
+
+                    if(isset($_POST['anmelden']))
+                    {
+                        $kundennummer = $_POST['kundennummer'];
+                        $found = FALSE;
+                        $searchID = "SELECT * FROM kunden";  //hier auch WHERE Befehl möglich
+                        
+                        
+                        foreach($pdo->query($searchID) as $col)
+                        {
+                            if($col["KundenNr"] == $kundennummer)
+                            {
+                                //session_start();
+                                $kundenname = $col["Vorname"];
+                                $_SESSION['login_user'] = $kundenname;
+                                //echo $_SESSION['login_user'];
+
+                                echo "Wilkommen ";
+                                echo $col["Vorname"];
+                                $found = True;
+
+                                header("Location:welcome.php"); 
+                            }
+                        }
+                        if($found == false)
+                        {
+                            echo "ID nicht vorhanden";
+                        }
+                    }
+                        
+                    ?>
                 </form>
             </section>
 
