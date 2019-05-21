@@ -1,3 +1,7 @@
+<?php
+    session_start(); 
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,29 +11,24 @@
 
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
         <script src="js/main.js"></script>
-        
-
 
         <meta charset="utf-8"> 
 
         <?php include "connect.php"; ?>
-
     </head>
     <body>
-                
         <?php include "header.php" ?>
 
         <main class="artikelAnzeige">
             <nav id="artikelAuswahl">
                 <ul>
-                    <li>All</li>    
-
+                    <li onclick=showGroup(1000)>All</li>    
                     <!-- Warengruppen aus Datenbank auslesen -->
                     <?php
                         $warGrupp = "SELECT * FROM warengruppen";  //hier auch WHERE Befehl möglich 
                         foreach($pdo->query($warGrupp) as $col)
                         {
-                           echo("<li>".$col["GruppenName"]."</li>");
+                           echo("<li onclick='showGroup(".$col["GruppenNr"].")' class='".$col["GruppenNr"]."'>".$col["GruppenName"]."</li>");
                         }
                     ?>
                 </ul>
@@ -43,7 +42,7 @@
                 <?php
                     foreach($pdo->query($artikel) as $col)
                     {
-                    echo("<section class='artikel' onclick='showDescription(this)'>");
+                    echo("<section class='artikel ".$col["GruppenNr"]."' onclick='showDescription(this)'>");
                         echo("<ul>");
                         echo("<li><h3 id='artikel1'><br/>".$col["ArtikelName"]."<h3></li>");
                         echo("<li>Productnumber: ".$col["ArtikelNr"]."</li>");
@@ -60,20 +59,6 @@
                     }
                 ?>
             </section>
-
-
-                <!-- <section class="artikel">
-                    <img src="images/boing.png">
-                    <ul>
-                        <li><h2>test</h2></li>
-                        <li>ArtNummer: 1</li>
-                        <li>Beschreibung: Cool</li>
-                        <li>100€</li>
-                    </ul>
-                    <button type="button">In den Warenkorb</button>
-                </section> -->
-                
-            </section> 
         </main>
         <?php include "footer.php" ?>
     </body>

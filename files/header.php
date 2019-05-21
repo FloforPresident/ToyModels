@@ -15,8 +15,8 @@
 
             <section id="signIn">
                 
-                <form action="index.php" method="post" name="login">
-                    <input name="anmelden" type='submit' value='Login'/> 
+                <form action="" method="post" name="login">
+                    <a href="#">Login</a> 
                     <section id='eingaben'>
                         <input type='text' name='kundennummer' placeholder='Kundennummer'><br><br>
                         <input name="anmelden" type='submit' value='Login'/>    

@@ -103,3 +103,16 @@ function alertID()
 {
     alert("Wrong ID")
 }
+
+//Warengruppen sortieren
+function showGroup(group_nr){
+    var artikel = document.getElementsByClassName("artikel");
+    for (var i=0; i<artikel.length; i++){
+        if(!artikel[i].classList.contains(group_nr) && group_nr != 1000){
+            artikel[i].classList.add("group_hidden");
+        }
+        else{
+            artikel[i].classList.remove("group_hidden");
+        }  
+     }
+}

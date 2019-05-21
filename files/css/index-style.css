@@ -49,7 +49,6 @@ main .artikel{
     padding: 0 1rem 7rem 1rem;
     margin:1rem;
     position:relative;
-    display: block;
 }
 
 
@@ -97,6 +96,11 @@ main .artikel button:hover{
     transition: background-color 0.5s ease;
     -webkit-transition: background-color 0.5s ease;
     background-color:#6e9bc5;
+}
+
+/* Warengruppen ausblenden */
+.group_hidden{
+    display:none;
 }
 
 /* Media Queries */
