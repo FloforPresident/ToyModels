@@ -7,7 +7,7 @@ main{
 /* Navigation */
 main nav{
     width:100%;
-    z-index:998;
+    z-index:1;
     position:fixed;
 }
 main nav img{
@@ -43,6 +43,7 @@ main nav ul li:hover{
     main nav{
         top:0;
         background-color: palevioletred;
+        z-index:3
     }
     main nav img{
         display:block;
