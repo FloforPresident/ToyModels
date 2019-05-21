@@ -27,20 +27,13 @@
                 </tr>
                 <tr>
                     <td>E-Mail*</td>
-                    <td><input type="text" name="email" placeholder="E-Mail"><br><br></td>
+                    <td><input type="text" name="email" placeholder="E-Mail"><br></td>
                 </tr>
                 <tr>
-                    <td>Straße und Hnr*</td>
-                    <td><input type="text" name="strassehnr" placeholder="Straße Hnr"><br></td>
+                    <td>E-Mail wiederholen*</td>
+                    <td><input type="text" name="emailwiederholen" placeholder="E-Mail wiederholen"><br></td>
                 </tr>
-                <tr>
-                    <td>PLZ*</td>
-                    <td><input type="text" name="plz" placeholder="PLZ"><br></td>
-                </tr>
-                <tr>
-                    <td>Ort*</td>
-                    <td><input type="text" name="ort" placeholder="Ort"><br></td>
-                </tr>
+                
             </table>
             <input type="radio" id="agb" value="AGB">
             <label for="agb">AGB bestätigen*</label><br><br>

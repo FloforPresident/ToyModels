@@ -41,14 +41,24 @@ function checkkid(){
 var fehlermeldung = "";
 
 function checkEmail(){
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(registrieren.email.value)){
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.registrieren.email.value)){
         document.registrieren.email.classList.remove("inputinvalid");    
-        return true;
+        if(document.registrieren.email.value == document.registrieren.emailwiederholen.value){
+            document.registrieren.email.classList.remove("inputinvalid");
+            document.registrieren.emailwiederholen.classList.remove("inputinvalid");
+            return true;
+        }
+        else{
+            fehlermeldung += "Die E-Mail Adressen stimmen nicht überein\n";
+            document.registrieren.email.classList.add("inputinvalid");
+            document.registrieren.emailwiederholen.classList.add("inputinvalid");
+            return false;
+        }
     }
     else{
-        fehlermeldung += "Bitte geben Sie eine gültige Email Adresse ein\n"
+        fehlermeldung += "Bitte geben Sie eine gültige Email Adresse ein\n";
         document.registrieren.email.classList.add("inputinvalid");
-        return (false)
+        return false;
     }
 }
 
@@ -77,24 +87,6 @@ function checkformular()
     }
     else{
         checkEmail();
-    }
-    if(document.registrieren.strassehnr.value == ""){
-        fehlermeldung += "Bitte geben Sie Ihre Straße und Hausnummer ein\n";
-        document.registrieren.strassehnr.classList.add("inputinvalid");
-    }else{
-        document.registrieren.strassehnr.classList.remove("inputinvalid");
-    }
-    if(document.registrieren.plz.value == "")  {
-        fehlermeldung += "Bitte geben Sie Ihre PLZ ein\n";
-        document.registrieren.plz.classList.add("inputinvalid");
-    }else{
-        document.registrieren.plz.classList.remove("inputinvalid");
-    }
-    if(document.registrieren.ort.value == "")  {
-        fehlermeldung += "Bitte geben Sie Ihren Ort ein\n";
-        document.registrieren.ort.classList.add("inputinvalid");
-    }else{
-        document.registrieren.ort.classList.remove("inputinvalid");
     }
     if(document.getElementById("agb").checked == false)  {
         fehlermeldung += "Bitte akzeptieren Sie die AGB\n";
