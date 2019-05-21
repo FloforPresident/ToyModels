@@ -82,8 +82,11 @@ function checkformular()
     }
     if(fehlermeldung.length > 0){
         alert(fehlermeldung);
+        stopPropagation().preventDefault();
     }
 }
+
+
 
 function alertID()
 {
