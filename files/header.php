@@ -20,9 +20,9 @@
                 </form>
             </section>  
 
-            <section id="signIn">
-                
-                <form id="loginForm" action="" method="post" name="login">
+            <!-- ab hier anmelden -->
+            <section id="signIn">     
+                <form id="loginForm" class="<?php echo $_SESSION['loggedIN']?>" action="" method="post" name="login">
                     <button>Login</button> 
                     <section id='eingaben'>
                         <input type='text' name='kundennummer' placeholder='Kundennummer'><br><br>
@@ -57,21 +57,38 @@
                                 echo "Wilkommen ";
                                 echo $col["Vorname"];
                                 $found = True;
+                                $_SESSION['loggedIN'] = "group_hidden";
+                                $_SESSION['loggingOUT'] = "group_shown";
 
-                                header("Location:welcome.php"); 
-
-                            
+                                header("Location:welcome.php");                 
                             }
                         }
                         if($found == false)
                         {
                             echo "ID nicht vorhanden";
                         }
-                    }
-                        
+                    }                      
                     ?>
                 </form>
             </section>
+            <!-- anmelden ende -->
+
+            <!-- ab hier abmelden -->
+            <section id="logout">
+                <form id="logoutForm" class="<?php echo $_SESSION['loggingOUT']?>" action="" method="post" name="login">
+                    <input name="abmelden" type='submit' value='Logout'/>    
+                    <?php
+                    if(isset($_POST['abmelden']))
+                    {
+                        $_SESSION['loggedIN'] = "group_shown";
+                        $_SESSION['loggingOUT'] = "group_hidden";
+
+                        //header("Location:index.php");     
+                    }                      
+                    ?>
+                </form>
+            </section>
+            <!-- abmelden ende -->
 
 
             <section id="warenkorb">

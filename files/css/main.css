@@ -109,7 +109,14 @@ footer section{
     display:flex;
     align-self: center;
 }
-
+/* anmeldebutton verstecken */
+.group_hidden{
+    display:none;
+}
+/* abmeldebutton verstecken */
+.group_shown{
+    display:block;
+}
 
 /* Media Queries */
 
