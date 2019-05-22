@@ -23,10 +23,15 @@
 
             echo ("
                     <p><h1>Danke für Ihre Registrierung " . $vorname . "!<br>Sie haben gerade Ihre Seele verkauft.</h1></p>
-                    ;");
+                ");
 
             $statement = $pdo->prepare("INSERT INTO kunden (Nachname, Vorname, Email) VALUES (?, ?, ?)");
             $statement->execute(array("$name", "$vorname", "$email"));
+
+            $statement2 = $pdo->prepare("SELECT KundenNr FROM kunden WHERE Nachname = ?");
+            $statement2->execute(array($name));   
+            $row = $statement2->fetch();
+             echo ("Ihre Kundennummer für die Anmeldung lautet " . $row['KundenNr']);
             ?>
     </main>
 
