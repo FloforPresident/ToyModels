@@ -40,7 +40,7 @@
             $statement2 = $pdo->prepare("SELECT KundenNr FROM kunden WHERE Nachname = ?");
             $statement2->execute(array($name));   
             $row = $statement2->fetch();
-             echo ("Ihre Kundennummer für die Anmeldung lautet " . $row['KundenNr']);
+             echo ("Ihre Kundennummer für die Anmeldung lautet " . $row['KundenNr'] . "<br><br>");
             ?>
 
             <a href="index.php"><button>Startseite</button></a>
