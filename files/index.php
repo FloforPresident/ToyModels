@@ -1,16 +1,6 @@
 <?php
-    //session_start();
-    // if(!isset($items))
-    // {
-    //     echo "check";
-    //     $items = [];
-    // }
-    $items = [];
-
-    // if(!isset($_SESSION['cart_items']))
-    // {
-    //     $_SESSION['cart_items'] = $items;
-    // }
+    session_start();
+    $item = NULL;
 ?>
 
 <!DOCTYPE html>
@@ -65,12 +55,22 @@
                         echo("<form action='' method='post' class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input type='number' min='1' placeholder='1' />&nbsp;&nbsp;
-                            <button name='addcart' type='submit'>Add to cart</button>");
+                            <button name=".$col['ArtikelNr']." type='submit'>Add to cart</button>");
 
-                            if(isset($_POST['addcart']))
+                            if(isset($_POST[$col["ArtikelNr"]]))
                             {
-                                $items[] = $col['ArtikelNr'];
-                                $_SESSION['cart_items'] = $items;
+                                if(!isset($_SESSION['cart_items']))
+                                {
+                                    echo $item;
+                                    $item = $col['ArtikelNr'];
+                                    $_SESSION['cart_items'] = array($item);
+                                }
+                                else
+                                {
+                                    $item = $col['ArtikelNr'];
+                                    array_push($_SESSION['cart_items'], $item);
+                                    // $_SESSION['cart_items'] = $items;
+                                }
 
                                 //header("Location:warenkorb.php"); 
                                 unset($_POST['addcart']);
