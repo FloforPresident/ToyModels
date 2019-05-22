@@ -18,10 +18,9 @@
     <body>  
     <script type="text/javascript">
         loggedIn();
-        alert("ja");
     </script>
         <main>
-            <h1>Welcome <?php echo $_SESSION['username'] ?> to ToyModels</h1>
+            <h1>Welcome <?php echo $_SESSION['login_user'] ?> to ToyModels</h1>
             <h2>Have a look what we have to offer</h2>
             <a href="index.php">CONTINUE</a>
         </main>

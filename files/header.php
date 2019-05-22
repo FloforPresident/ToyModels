@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['loggingOUT']))
+    {
+        $_SESSION['loggingOUT'] = "group_hidden";
+    }
 ?>
 <head>
     <?php include "connect.php"; ?>
@@ -76,16 +80,18 @@
             <!-- ab hier abmelden -->
             <section id="logout">
                 <form id="logoutForm" class="<?php echo $_SESSION['loggingOUT']?>" action="" method="post" name="login">
-                    <input name="abmelden" type='submit' value='Logout'/>    
+                    <button name="abmelden" type='submit'>Logout</button>   
                     <?php
                     if(isset($_POST['abmelden']))
                     {
                         $_SESSION['loggedIN'] = "group_shown";
+                        session_unset();
+                        session_destroy();
                         $_SESSION['loggingOUT'] = "group_hidden";
-
-                        //header("Location:index.php");     
+                        header("Location:index.php");     
                     }                      
                     ?>
+                    <b>Welcome <?php echo $_SESSION['login_user'] ?></b>
                 </form>
             </section>
             <!-- abmelden ende -->
