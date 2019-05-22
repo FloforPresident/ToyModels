@@ -35,12 +35,6 @@
                     </section>
 
                     <?php
-                    if(isset($_SESSION["login_user"]) == true)
-                    {
-                        echo "Willkommen ";
-                        echo $_SESSION["login_user"];
-                    }
-                    //session_start();
 
                     if(isset($_POST['anmelden']))
                     {

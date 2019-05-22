@@ -1,5 +1,16 @@
 <?php
     //session_start();
+    // if(!isset($items))
+    // {
+    //     echo "check";
+    //     $items = [];
+    // }
+    $items = [];
+
+    // if(!isset($_SESSION['cart_items']))
+    // {
+    //     $_SESSION['cart_items'] = $items;
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -51,13 +62,25 @@
                         echo("<li class='beschreibung'>".$col["Beschreibung"]."</li>");
                         echo("</ul>");
                         
-                        echo("<section class='inWarenkorb'>
+                        echo("<form action='' method='post' class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input type='number' min='1' placeholder='1' />&nbsp;&nbsp;
-                            <button type='button'>In den Warenkorb</button>
-                        </section>");
+                            <button name='addcart' type='submit'>Add to cart</button>");
+
+                            if(isset($_POST['addcart']))
+                            {
+                                $items[] = $col['ArtikelNr'];
+                                $_SESSION['cart_items'] = $items;
+
+                                //header("Location:warenkorb.php"); 
+                                unset($_POST['addcart']);
+                            }
+
+                        echo("</form>");
                     echo("</section>");
+                            
                     }
+                    
                 ?>
             </section>
         </main>
