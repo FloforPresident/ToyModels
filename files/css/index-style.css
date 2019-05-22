@@ -87,6 +87,7 @@ main .artikel{
     position:relative;
     border-radius: 15px;
 }
+main .artikel h3{cursor: pointer;}
 main .artikel img, main .artikel ul{
     float:left;
     margin:0;

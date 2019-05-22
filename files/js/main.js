@@ -1,10 +1,11 @@
 //Beschreibung ausklappen
 function showDescription(element){
-    if(element.classList.contains("hidden")){
-        element.classList.remove("hidden");
+    var artikel = element.parentElement.parentElement.parentElement;
+    if(artikel.classList.contains("hidden")){
+        artikel.classList.remove("hidden");
     }
     else{
-        element.classList.add("hidden");
+        artikel.classList.add("hidden");
     }
 }
 

@@ -34,6 +34,8 @@
     <main>
         <h1>Hi ich bin Basti, ich betreue deinen Warenkorb</h1>
             <?php 
+                $gesamtpreis = 0;
+
             //Artikel auslesen
             if(isset($_SESSION['cart_items']))
             {
@@ -57,10 +59,27 @@
                                 echo("<p class='menge'>Menge: 1</p>");
                                 echo("<p>Preis: ".$col['Einkaufspreis']." €");
 
+                                echo("<form action='warenkorb.php' method='post' class='inWarenkorb'>
+                                    <button name=".$col['ArtikelNr']." type='submit'>Delete</button>");
+
+                                //Artikel aus dem Warenkorb entfernen
+                                if(isset($_POST[$col["ArtikelNr"]]))
+                                {   
+                                    $key = array_search($a, $arr);
+                                    unset($arr[$key]);
+                                    $_SESSION['cart_items'] = $arr;
+
+                                    header("Location: warenkorb.php"); //Seiten Reload
+                                }
+
+                                echo("</form>");
+
                             echo("</td>");
                             echo("</tr>");
                         echo("</table>
                         </section>");
+
+                        $gesamtpreis += $col['Einkaufspreis'];
                     }
                 }
             }
@@ -77,7 +96,9 @@
                         <p>GesamtPreis:</p>
                     </td>
                     <td class="Preis">
-                        <p>50000&euro;</p>
+                        <p>
+                            <?php echo($gesamtpreis); ?>
+                        </p>
                     </td>
                 </tr>
                 <tr><td>

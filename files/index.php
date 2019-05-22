@@ -44,15 +44,15 @@
                 <?php
                     foreach($pdo->query($artikel) as $col)
                     {
-                    echo("<section class='artikel hidden ".$col["GruppenNr"]."' onclick='showDescription(this)'>");
+                    echo("<section class='artikel hidden ".$col["GruppenNr"]."'>");
                         echo("<ul>");
-                        echo("<li><h3 id='artikel1'><br/>".$col["ArtikelName"]."<h3></li>");
+                        echo("<li><h3 id='artikel1' onclick='showDescription(this)'><br/>".$col["ArtikelName"]."<h3></li>");
                         echo("<li>Productnumber: ".$col["ArtikelNr"]."</li>");
                         echo("<li>Price: ".$col["Listenpreis"]." €</li>");
                         echo("<li class='beschreibung'>".$col["Beschreibung"]."</li>");
                         echo("</ul>");
                         
-                        echo("<form action='' method='post' class='inWarenkorb'>
+                        echo("<form method='post' class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input type='number' min='1' placeholder='1' />&nbsp;&nbsp;
                             <button name=".$col['ArtikelNr']." type='submit'>Add to cart</button>");
@@ -71,9 +71,7 @@
                                     array_push($_SESSION['cart_items'], $item);
                                     // $_SESSION['cart_items'] = $items;
                                 }
-
-                                //header("Location:warenkorb.php"); 
-                                unset($_POST['addcart']);
+                                // unset($_POST['addcart']);
                             }
 
                         echo("</form>");
