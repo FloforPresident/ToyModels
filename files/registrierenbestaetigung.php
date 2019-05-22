@@ -9,6 +9,15 @@
         <script src="js/main.js"></script>
         <meta charset="utf-8"> 
         <?php include "connect.php"; ?>
+
+        <script>
+            window.onload = function() {
+                hideLogin();
+            };
+            function hideLogin(){
+                document.getElementById("signIn").style.display = "none";
+            }
+        </script>
     </head>
     <body>
 
@@ -33,6 +42,8 @@
             $row = $statement2->fetch();
              echo ("Ihre Kundennummer für die Anmeldung lautet " . $row['KundenNr']);
             ?>
+
+            <a href="index.php"><button>Startseite</button></a>
     </main>
 
      <?php include "footer.php" ?>
