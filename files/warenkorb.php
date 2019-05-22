@@ -13,6 +13,11 @@
     }
     $_SESSION['last_visit'] = time();
 
+    //pay button default auf group_hidden setzten
+    if(!isset($_SESSION['payButton']))
+    {
+        $_SESSION['payButton'] = "group_hidden";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -108,8 +113,9 @@
                     <td>
                         <a href="index.php">&lt;&lt;&nbsp;Zurück zu unserem Angebot</a>
                     </td>
-                    <td class="Preis">
-                        <button type="button">Zur Kasse</button>
+                    <td class="pay <?php echo $_SESSION['payButton']?>">
+                        <a href="completeOrder.php"><button 
+                        type="button"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></button></a>
                     </td>
                 </tr>
             </table>

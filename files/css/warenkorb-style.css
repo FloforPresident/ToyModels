@@ -10,6 +10,16 @@ main .artikel{
 main .preis{
     text-align:right;
 }
+.pay{
+    /* display: none; */
+    text-align:right;
+}
+.group_hidden{
+    display:none;
+}
+.group_shown{
+    display:block;
+}
 
 main .Preisanzeige{
     width: 88vw;

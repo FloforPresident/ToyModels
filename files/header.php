@@ -4,6 +4,8 @@
     {
         $_SESSION['loggingOUT'] = "group_hidden";
     }
+
+    
 ?>
 <head>
     <?php include "connect.php"; ?>
@@ -40,23 +42,23 @@
                     {
                         $kundennummer = $_POST['kundennummer'];
                         $found = FALSE;
-                        $searchID = "SELECT * FROM kunden";  //hier auch WHERE Befehl möglich
+                        $searchID = "SELECT * FROM kunden"; 
                         
                         
                         foreach($pdo->query($searchID) as $col)
                         {
                             if($col["KundenNr"] == $kundennummer)
                             {
-                                //session_start();
                                 $kundenname = $col["Vorname"];
                                 $_SESSION['login_user'] = $kundenname;
-                                //echo $_SESSION['login_user'];
 
                                 echo "Wilkommen ";
                                 echo $col["Vorname"];
                                 $found = True;
                                 $_SESSION['loggedIN'] = "group_hidden";
                                 $_SESSION['loggingOUT'] = "group_shown";
+
+                                $_SESSION['payButton'] = "group_shown";
 
                                 header("Location:welcome.php");                 
                             }
@@ -81,7 +83,9 @@
                         $_SESSION['loggedIN'] = "group_shown";
                         session_unset();
                         session_destroy();
-                        $_SESSION['loggingOUT'] = "group_hidden";
+                        //$_SESSION['loggingOUT'] = "group_hidden";
+                        $_SESSION['payButton'] = "group_hidden";
+
                         header("Location:index.php");     
                     }                      
                     ?>
