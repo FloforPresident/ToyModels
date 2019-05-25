@@ -52,6 +52,10 @@
                         echo("<li>Productnumber: ".$col["ArtikelNr"]."</li>");
                         echo("<li>Price: ".$col["Listenpreis"]." €</li>");
                         echo("<li class='beschreibung'>".$col["Beschreibung"]."</li>");
+
+                        // Hilfszeile um Datenbankzugriff zu überprüfen
+                        echo("<li>Bestand: ".$col['Bestandsmenge']."</li>");
+
                         echo("</ul>");
                         
                         //add to cart form

@@ -44,8 +44,10 @@
                                 echo($col['ArtikelName']);
                                 echo("</h3>");
                                 echo("<p class='artikelNummer'>Artikelnummer: ".$col['ArtikelNr']."</p>");
-                                echo("<p class='menge'>Menge: 1</p>");
-                                $col['Einkaufspreis'] = $_SESSION[$col['ArtikelNr']] * $col['Einkaufspreis'];
+                                echo("<p class='menge'>Menge: ");
+                                echo($_SESSION[$col['ArtikelNr']]); //Anzahl
+                                echo("</p>");
+                                $col['Einkaufspreis'] = $_SESSION[$col['ArtikelNr']] * $col['Einkaufspreis']; //Anzahl * Preis
                                 echo("<p>Preis: ".$col['Einkaufspreis']." €</p>");
 
                             echo("</td>");
@@ -56,6 +58,15 @@
                         $gesamtpreis += $col['Einkaufspreis']; 
                         unset($_SESSION['cart_items']);
 
+                        $helpvariable1 = $_SESSION[$col['ArtikelNr']]; //Bestellte Anzahl
+                        $helpvariable2 = $col['ArtikelNr']; 
+                
+                        //Bestandsmenge aktualisieren
+                        $statement = $pdo->prepare(
+                            "UPDATE artikel
+                            SET Bestandsmenge = Bestandsmenge - ?
+                            WHERE ArtikelNr= ?");
+                        $statement->execute(array("$helpvariable1", "$helpvariable2"));
                     }
                 }
             }
