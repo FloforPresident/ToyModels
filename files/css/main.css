@@ -95,6 +95,11 @@ header #signIn:hover #eingaben{
 
 
 /* Footer Declarations */
+#abstand{
+    width: 100%;
+    height: 5rem;
+    float: left;
+}
 
 footer{
     background-color:#dfdfdf;
