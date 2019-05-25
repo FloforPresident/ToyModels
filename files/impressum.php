@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +14,16 @@
 
         <?php include "header.php" ?>
 
-        <main>                
+        <main>
+            <!-- a href="tel:918054646">91805 4646</a>
+                <br>
+                <a href="mail:stefan@th-nuernberg.de">toy@store.de</a>
+                <br>
+                <a href="fax:918054646">Schicken Sie uns ein Fax</a>
+                <button type="button">
+                    <a href="index.html">Back 2 Index</a>
+                </button> -->
+                
                 <div class='impressum'>
                     <h1>Hallo, ich hoffe Ihnen gefällt unser Impressum, COOL</h1>
                     <h1>Impressum</h1>
@@ -30,7 +38,7 @@
                     </p><p><strong>Kontakt:</strong> <br>
                     Telefon: 01234-789456<br>
                     Fax: 1234-56789<br>
-                    E-Mail: <a href='mailto:max@muster.de'>max@muster.de</a></p><p><strong>Umsatzsteuer-ID: </strong> <br>
+                    E-Mail: <a href='mailto:max@muster.de'>max@muster.de</a></br></p><p><strong>Umsatzsteuer-ID: </strong> <br>
                     Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: Musterustid.<br><br>
                     <strong>Wirtschafts-ID: </strong><br>
                     Musterwirtschaftsid<br>

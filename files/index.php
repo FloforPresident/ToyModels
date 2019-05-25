@@ -89,7 +89,6 @@
                     echo("</section>");       
                     }
                 ?>
-            <section id="abstand"></section>
             </section>
         </main>
         <?php include "footer.php" ?>
