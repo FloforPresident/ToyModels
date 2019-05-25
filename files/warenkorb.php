@@ -61,8 +61,11 @@
                                 echo($col['ArtikelName']);
                                 echo("</h3>");
                                 echo("<p class='artikelNummer'>Artikelnummer: ".$col['ArtikelNr']."</p>");
-                                echo("<p class='menge'>Menge: 1</p>");
-                                echo("<p>Preis: ".$col['Einkaufspreis']." €");
+                                echo("<p class='menge'>Menge: ".$_SESSION[$col['ArtikelNr']]."");
+                                echo("</p>");
+                                //Preis * Anzahl
+                                $col['Listenpreis'] = $col['Listenpreis'] * $_SESSION[$col['ArtikelNr']];
+                                echo("<p>Preis: ".$col['Listenpreis']." €");
 
                                 echo("<form action='warenkorb.php' method='post' class='inWarenkorb'>
                                     <button name=".$col['ArtikelNr']." type='submit'>Delete</button>");
@@ -84,7 +87,7 @@
                         echo("</table>
                         </section>");
 
-                        $gesamtpreis += $col['Einkaufspreis'];
+                        $gesamtpreis += $col['Listenpreis'];
                     }
                 }
             }

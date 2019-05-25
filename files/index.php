@@ -1,8 +1,9 @@
 <?php
     session_start();
 
-    //hilfsvariable für Warenkorbarray
+    //hilfsvariablen für Warenkorbarray
     $item = NULL;
+    $amount = NULL;
 ?>
 
 <!DOCTYPE html>
@@ -53,10 +54,10 @@
                         echo("<li class='beschreibung'>".$col["Beschreibung"]."</li>");
                         echo("</ul>");
                         
-                        //add to cart button
+                        //add to cart form
                         echo("<form method='post' class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
-                            <input type='number' min='1' placeholder='1' />&nbsp;&nbsp;
+                            <input name='anzahl' type='number' min='1' value='1' />&nbsp;&nbsp;
                             <button name=".$col['ArtikelNr']." type='submit'>Add to cart</button>");
 
                             if(isset($_POST[$col["ArtikelNr"]]))
@@ -66,15 +67,21 @@
                                     echo $item;
                                     $item = $col['ArtikelNr'];
                                     $_SESSION['cart_items'] = array($item);
+
+                                    $amount = $_POST['anzahl'];
+                                    $_SESSION[$col["ArtikelNr"]] = $amount;
                                 }
                                 else
                                 {
                                     $item = $col['ArtikelNr'];
                                     array_push($_SESSION['cart_items'], $item);
+
+                                    $amount = $_POST['anzahl'];
+                                    $_SESSION[$col["ArtikelNr"]] = $amount;
                                 }
                             }
                         echo("</form>");
-                        
+
                     echo("</section>");       
                     }
                 ?>

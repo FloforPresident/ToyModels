@@ -45,7 +45,8 @@
                                 echo("</h3>");
                                 echo("<p class='artikelNummer'>Artikelnummer: ".$col['ArtikelNr']."</p>");
                                 echo("<p class='menge'>Menge: 1</p>");
-                                echo("<p>Preis: ".$col['Einkaufspreis']." €");
+                                $col['Einkaufspreis'] = $_SESSION[$col['ArtikelNr']] * $col['Einkaufspreis'];
+                                echo("<p>Preis: ".$col['Einkaufspreis']." €</p>");
 
                             echo("</td>");
                             echo("</tr>");
@@ -68,7 +69,7 @@
             <table class="Preisanzeige">
                 <tr>
                     <td>
-                        <p>GesamtPreis:</p>
+                        <p>Gesamtpreis mit Rabatten:</p>
                     </td>
                     <td class="Preis">
                         <p>

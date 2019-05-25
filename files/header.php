@@ -37,13 +37,11 @@
                     </section>
 
                     <?php
-
                     if(isset($_POST['anmelden']))
                     {
                         $kundennummer = $_POST['kundennummer'];
                         $found = FALSE;
                         $searchID = "SELECT * FROM kunden"; 
-                        
                         
                         foreach($pdo->query($searchID) as $col)
                         {
