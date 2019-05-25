@@ -64,11 +64,33 @@
                         echo("<li class='beschreibung hidden'>".$row["Beschreibung"]."</li>");
                         echo("</ul>");
                         
-                        echo("<section class='inWarenkorb'>
+                        //add to cart form
+                        echo("<form method='post' class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
-                            <input type='number' min='1' placeholder='1' />&nbsp;&nbsp;
-                            <button type='button'>In den Warenkorb</button>
-                        </section>");
+                            <input name='anzahl' type='number' min='1' value='1' />&nbsp;&nbsp;
+                            <button name=".$col['ArtikelNr']." type='submit'>Add to cart</button>");
+
+                            if(isset($_POST[$col["ArtikelNr"]]))
+                            {
+                                if(!isset($_SESSION['cart_items']))
+                                {
+                                    echo $item;
+                                    $item = $col['ArtikelNr'];
+                                    $_SESSION['cart_items'] = array($item);
+
+                                    $amount = $_POST['anzahl'];
+                                    $_SESSION[$col["ArtikelNr"]] = $amount;
+                                }
+                                else
+                                {
+                                    $item = $col['ArtikelNr'];
+                                    array_push($_SESSION['cart_items'], $item);
+
+                                    $amount = $_POST['anzahl'];
+                                    $_SESSION[$col["ArtikelNr"]] = $amount;
+                                }
+                            }
+                        echo("</form>");
                     echo("</section>"); 
                     $ergebniszaehler++;
                  }
