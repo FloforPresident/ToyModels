@@ -19,17 +19,10 @@
     <body>
         <?php include "header.php" ?>
         <main class="artikelAnzeige">
+
             <nav id="artikelAuswahl">
                 <ul>
-                    <li>All</li>    
-                    <!-- Warengruppen aus Datenbank auslesen -->
-                    <?php
-                        $warGrupp = "SELECT * FROM warengruppen";  //hier auch WHERE Befehl möglich 
-                        foreach($pdo->query($warGrupp) as $col)
-                        {
-                           echo("<li>".$col["GruppenName"]."</li>");
-                        }
-                    ?>
+                    <li><a href="index.php">All Products</a></li>
                 </ul>
             </nav>
 

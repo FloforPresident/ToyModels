@@ -1,10 +1,8 @@
 <?php
-    //session_start();
     if(!isset($_SESSION['loggingOUT']))
     {
         $_SESSION['loggingOUT'] = "group_hidden";
     }
-
     
 ?>
 <head>
