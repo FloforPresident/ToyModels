@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,29 +66,29 @@
                         echo("</ul>");
                         
                         //add to cart form
-                        echo("<form method='post' class='inWarenkorb'>
+                        echo("<form method='post' action='index.php' class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input name='anzahl' type='number' min='1' value='1' />&nbsp;&nbsp;
-                            <button name=".$col['ArtikelNr']." type='submit'>Add to cart</button>");
+                            <button name=".$row['ArtikelNr']." type='submit'>Add to cart</button>");
 
-                            if(isset($_POST[$col["ArtikelNr"]]))
+                            if(isset($_POST[$row["ArtikelNr"]]))
                             {
                                 if(!isset($_SESSION['cart_items']))
                                 {
                                     echo $item;
-                                    $item = $col['ArtikelNr'];
+                                    $item = $row['ArtikelNr'];
                                     $_SESSION['cart_items'] = array($item);
 
                                     $amount = $_POST['anzahl'];
-                                    $_SESSION[$col["ArtikelNr"]] = $amount;
+                                    $_SESSION[$row["ArtikelNr"]] = $amount;
                                 }
                                 else
                                 {
-                                    $item = $col['ArtikelNr'];
+                                    $item = $row['ArtikelNr'];
                                     array_push($_SESSION['cart_items'], $item);
 
                                     $amount = $_POST['anzahl'];
-                                    $_SESSION[$col["ArtikelNr"]] = $amount;
+                                    $_SESSION[$row["ArtikelNr"]] = $amount;
                                 }
                             }
                         echo("</form>");
