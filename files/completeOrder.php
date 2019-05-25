@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Warenkorb</title>
+    <title>Completed</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/warenkorb-style.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -53,15 +53,6 @@
                         </section>");
 
                         $gesamtpreis += $col['Einkaufspreis']; 
-
-                        //Bestand minus 1 
-                        // $sql = "SELECT artikel.bestandsmenge - 1 AS Bestandsmenge 
-                        // FROM artikel.bestandsmenge 
-                        // WHERE ArtikelNR = '$col['ArtikelNr'];' ";
-
-                        // $result = $conn->query($sql);
-                        // echo $result;
-
                         unset($_SESSION['cart_items']);
 
                     }
@@ -81,7 +72,7 @@
                     </td>
                     <td class="Preis">
                         <p>
-                            <?php echo($gesamtpreis); ?>
+                            <?php echo($gesamtpreis); ?>&nbsp;€
                         </p>
                     </td>
                 </tr>

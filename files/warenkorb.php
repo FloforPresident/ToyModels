@@ -102,7 +102,7 @@
                     </td>
                     <td class="Preis">
                         <p>
-                            <?php echo($gesamtpreis); ?>
+                            <?php echo($gesamtpreis); ?>&nbsp;€
                         </p>
                     </td>
                 </tr>
@@ -115,7 +115,7 @@
                     </td>
                     <td class="pay <?php echo $_SESSION['payButton']?>">
                         <a href="completeOrder.php"><button 
-                        type="button"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></button></a>
+                        type="button"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PAY&nbsp;AND&nbsp;ORDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></button></a>
                     </td>
                 </tr>
             </table>

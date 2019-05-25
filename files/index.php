@@ -1,5 +1,7 @@
 <?php
     session_start();
+
+    //hilfsvariable für Warenkorbarray
     $item = NULL;
 ?>
 
@@ -20,14 +22,14 @@
     <body>
         <?php include "header.php" ?>
 
+        <!-- Warengruppen aus Datenbank auslesen -->
         <main class="artikelAnzeige">
             <nav id="artikelAuswahl">
                 <img onclick="menu_clicked(this)" src="images/menu_button.png"/>
                 <ul>
                     <li onclick=showGroup(1000)>All</li>    
-                    <!-- Warengruppen aus Datenbank auslesen -->
                     <?php
-                        $warGrupp = "SELECT * FROM warengruppen";  //hier auch WHERE Befehl möglich 
+                        $warGrupp = "SELECT * FROM warengruppen"; 
                         foreach($pdo->query($warGrupp) as $col)
                         {
                            echo("<li onclick='showGroup(".$col["GruppenNr"].")' class='".$col["GruppenNr"]."'>".$col["GruppenName"]."</li>");
@@ -35,15 +37,14 @@
                     ?>
                 </ul>
             </nav>
-
-            <?php
-                $artikel = "SELECT * FROM artikel";
-            ?>
-
+            
+            <!-- Artikel für Anzeige aus Datenbank lesen -->
             <section id="artikelAnzeige">
                 <?php
+                    $artikel = "SELECT * FROM artikel";
                     foreach($pdo->query($artikel) as $col)
                     {
+                    //einzelnes Artikelfeld
                     echo("<section class='artikel hidden ".$col["GruppenNr"]."'>");
                         echo("<ul>");
                         echo("<li><h3 id='artikel1' onclick='showDescription(this)'><br/>".$col["ArtikelName"]."<h3></li>");
@@ -52,6 +53,7 @@
                         echo("<li class='beschreibung'>".$col["Beschreibung"]."</li>");
                         echo("</ul>");
                         
+                        //add to cart button
                         echo("<form method='post' class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input type='number' min='1' placeholder='1' />&nbsp;&nbsp;
@@ -69,16 +71,12 @@
                                 {
                                     $item = $col['ArtikelNr'];
                                     array_push($_SESSION['cart_items'], $item);
-                                    // $_SESSION['cart_items'] = $items;
                                 }
-                                // unset($_POST['addcart']);
                             }
-
                         echo("</form>");
-                    echo("</section>");
-                            
+                        
+                    echo("</section>");       
                     }
-                    
                 ?>
             </section>
         </main>

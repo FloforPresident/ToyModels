@@ -83,7 +83,6 @@
                         $_SESSION['loggedIN'] = "group_shown";
                         session_unset();
                         session_destroy();
-                        //$_SESSION['loggingOUT'] = "group_hidden";
                         $_SESSION['payButton'] = "group_hidden";
 
                         header("Location:index.php");     
