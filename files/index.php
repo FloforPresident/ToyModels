@@ -42,9 +42,10 @@
             <!-- Artikel für Anzeige aus Datenbank lesen -->
             <section id="artikelAnzeige">
                 <?php
-                    $artikel = "SELECT * FROM artikel";
-                    foreach($pdo->query($artikel) as $col)
-                    {
+                $artikel = "SELECT * FROM artikel";
+
+                foreach($pdo->query($artikel) as $col)
+                {
                     //einzelnes Artikelfeld
                     echo("<section class='artikel hidden ".$col["GruppenNr"]."'>");
                         echo("<ul>");
@@ -59,7 +60,7 @@
                         echo("</ul>");
                         
                         //add to cart form
-                        echo("<form method='post' class='inWarenkorb'>
+                        echo("<form method='post' class='inWarenkorb cartHover'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input name='anzahl' type='number' min='1' value='1' />&nbsp;&nbsp;
                             <button name=".$col['ArtikelNr']." type='submit'>Add to cart</button>");
@@ -84,8 +85,8 @@
                                     $_SESSION[$col["ArtikelNr"]] = $amount;
                                 }
                             }
+                           include "warenkorbhover.php";
                         echo("</form>");
-
                     echo("</section>");       
                     }
                 ?>

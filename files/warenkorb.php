@@ -30,6 +30,7 @@
     <meta charset="utf-8"> 
 
     <script src="js/login.js"></script>
+    <?php include "connect.php"?>
 
 </head>
 <body>

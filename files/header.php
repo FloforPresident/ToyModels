@@ -6,7 +6,7 @@
     
 ?>
 <head>
-    <?php include "connect.php"; ?>
+    <?php //include "connect.php"; ?>
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
 </head>

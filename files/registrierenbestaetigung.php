@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php session_start();?>
     <head>
         <title>Bestätigung Registrierung</title>
         <link rel="stylesheet" href="css/main.css">
@@ -8,7 +9,7 @@
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
         <script src="js/main.js"></script>
         <meta charset="utf-8"> 
-        <?php include "connect.php"; ?>
+        <?php include "connect.php"?>
 
         <script>
             window.onload = function() {
@@ -23,6 +24,7 @@
 
         
     <?php include "header.php" ?>
+
 
     <main>
             <?php

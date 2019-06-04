@@ -8,9 +8,6 @@
 
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
         <script src="js/main.js"></script>
-        
-
-
         <meta charset="utf-8"> 
 
         <?php include "connect.php"; ?>
@@ -59,7 +56,7 @@
                         echo("</ul>");
                         
                         //add to cart form
-                        echo("<form method='post' action='index.php' class='inWarenkorb'>
+                        echo("<form method='post' action='index.php' class='inWarenkorb cartHover'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input name='anzahl' type='number' min='1' value='1' />&nbsp;&nbsp;
                             <button name=".$row['ArtikelNr']." type='submit'>Add to cart</button>");
@@ -82,8 +79,10 @@
 
                                     $amount = $_POST['anzahl'];
                                     $_SESSION[$row["ArtikelNr"]] = $amount;
-                                }
+                                }   
                             }
+                        //popup fenster
+                        include "warenkorbhover.php";
                         echo("</form>");
                     echo("</section>"); 
                     $ergebniszaehler++;

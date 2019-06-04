@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start()?>
 <html>
     <head>
         <title>Hier Registrieren</title>
@@ -6,10 +7,11 @@
         <link rel="stylesheet" href="css/register-style.css">
         <script type="text/javascript" src="js/jquery-3.4.1.min.js" ></script>
         <script src="js/main.js"></script>
-        <meta charset="utf-8"> 
+        <meta charset="utf-8">         
+        <?php include "connect.php"?>
+
     </head>
     <body>
-
         <?php include "header.php" ?>
         
         <main>

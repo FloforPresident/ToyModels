@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/warenkorb-style.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <meta charset="utf-8"> 
+    <?php include "connect.php"?>
+
 </head>
 <body>
     <?php include "header.php"?>
