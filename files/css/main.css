@@ -136,5 +136,9 @@ footer section{
 @media (max-width: 1080px){
     header{
         padding-top:3rem;
+        padding-bottom: 0;
+    }
+    main{
+        padding-top: 15rem;
     }
 }

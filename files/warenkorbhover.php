@@ -2,17 +2,18 @@
 /* popup text */
 .cartHover .cartHoverText {
   visibility: hidden;
-  width: 200%;
+  width: auto;
   background-color: black;
   color: #fff;
   text-align: left;
-  padding: 5px 1rem;
+  padding: 0rem 2rem;
+  padding-bottom: 2rem;
   border-radius: 6px;
  
   /* Position von Popup*/
   position: absolute;
-  bottom: 3rem;
-  right: 0;
+  top: 4rem;
+  right: 2rem;
   z-index: 1;
 }
 
@@ -37,7 +38,7 @@
                  echo("<section>
                      <table>");
                          echo("<li class='menge'>".$_SESSION[$col['ArtikelNr']]."x ".$col['ArtikelName']."</li>");
-                     echo("</tr>");
+                echo("</tr>");
              }
          }
          echo("</table>

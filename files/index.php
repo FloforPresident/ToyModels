@@ -60,10 +60,10 @@
                         echo("</ul>");
                         
                         //add to cart form
-                        echo("<form method='post' class='inWarenkorb cartHover'>
+                        echo("<form method='post'  class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input name='anzahl' type='number' min='1' value='1' />&nbsp;&nbsp;
-                            <button name=".$col['ArtikelNr']." type='submit'>Add to cart</button>");
+                            <button name=".$col['ArtikelNr']." action='index.php' type='submit'>Add to cart</button>");
 
                             if(isset($_POST[$col["ArtikelNr"]]))
                             {
@@ -85,10 +85,9 @@
                                     $_SESSION[$col["ArtikelNr"]] = $amount;
                                 }
                             }
-                           include "warenkorbhover.php";
                         echo("</form>");
                     echo("</section>");       
-                    }
+                }
                 ?>
             <section id="abstand"></section>
             </section>

@@ -90,9 +90,10 @@
             <!-- abmelden ende -->
 
 
-            <section id="warenkorb">
+            <section id="warenkorb" class="cartHover">
                 <a href="warenkorb.php">
                     <img width="40px" src="images/warenkorb_white.png"/>
                 </a>
+                <?php include "warenkorbhover.php"; ?>
             </section>
         </header> 
