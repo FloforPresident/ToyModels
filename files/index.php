@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index-style.css">
 
-        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
         <script src="js/main.js"></script>
 
         <meta charset="utf-8"> 
@@ -72,24 +71,20 @@
                                     echo $item;
                                     $item = $col['ArtikelNr'];
                                     $_SESSION['cart_items'] = array($item);
-
-                                    $amount = $_POST['anzahl'];
-                                    $_SESSION[$col["ArtikelNr"]] = $amount;
                                 }
                                 else
                                 {
                                     $item = $col['ArtikelNr'];
                                     array_push($_SESSION['cart_items'], $item);
-
-                                    $amount = $_POST['anzahl'];
-                                    $_SESSION[$col["ArtikelNr"]] = $amount;
                                 }
+                                $amount = $_POST['anzahl'];
+                                $_SESSION[$col["ArtikelNr"]] = $amount;
                             }
                         echo("</form>");
                     echo("</section>");       
                 }
                 ?>
-            <section id="abstand"></section>
+                <section id="abstand"></section>
             </section>
         </main>
         <?php include "footer.php" ?>
