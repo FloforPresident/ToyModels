@@ -1,7 +1,8 @@
+<template id="carthover">
 <style>
 /* popup text */
-.cartHover .cartHoverText {
-  visibility: hidden;
+.cartHoverText {
+  visibility: visible;
   width: auto;
   background-color: black;
   color: #fff;
@@ -9,17 +10,28 @@
   padding: 0rem 2rem;
   padding-bottom: 2rem;
   border-radius: 6px;
+  display: block;
  
   /* Position von Popup*/
   position: absolute;
-  top: 4rem;
+  top: 5rem;
   right: 2rem;
   z-index: 1;
 }
-
-.cartHover:hover .cartHoverText {
-  visibility: visible;
+@media (max-width: 1080px){
+    .cartHoverText {
+        top:8rem;
+    }
 }
+@media (max-width: 700px){
+    .cartHoverText {
+        top: 18rem;
+    }
+}
+
+/* .cartHover:hover .cartHoverText {
+  visibility: visible;
+} */
 </style>
 <?php
  //add to cart hover
@@ -47,7 +59,24 @@
      else{
          echo("<h3>Keine Artikel im Warenkorb</h3>");
      }
- 
- 
 echo("</span>");
 ?>
+</template>
+
+<script>
+    function getHoverTemplate(element) 
+    {
+            let temp = document.getElementById('carthover');
+            let content = temp.content.cloneNode(true);
+
+            document.getElementById(element).appendChild(content);             
+
+            console.log(content)
+            console.log("aufruf findet statt");
+    }
+    function killHoverTemplate(element) 
+    {
+        var list = document.getElementById(element);  
+        list.removeChild(list.lastChild);
+    }
+</script>

@@ -9,6 +9,8 @@
     <?php //include "connect.php"; ?>
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
+    <?php include "warenkorbhover.php"; ?>
+
 </head>
 
 <header>
@@ -89,11 +91,12 @@
             </section>
             <!-- abmelden ende -->
 
-
-            <section id="warenkorb" class="cartHover">
+            <section id="warenkorb"   
+            onmouseover='getHoverTemplate(this.id)' 
+            onmouseout='killHoverTemplate(this.id)'>
                 <a href="warenkorb.php">
                     <img width="40px" src="images/warenkorb_white.png"/>
                 </a>
-                <?php include "warenkorbhover.php"; ?>
             </section>
+
         </header> 

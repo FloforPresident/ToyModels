@@ -124,6 +124,15 @@ footer section{
 }
 
 /* Media Queries */
+@media (max-width: 1080px){
+    header{
+        padding-top:3rem;
+        padding-bottom: 0;
+    }
+    main{
+        padding-top: 3rem;
+    }
+}
 
 @media (max-width: 700px){
     header{
@@ -131,12 +140,6 @@ footer section{
         height:15rem;
         position:absolute;
         top:0;
-    }
-}
-@media (max-width: 1080px){
-    header{
-        padding-top:3rem;
-        padding-bottom: 0;
     }
     main{
         padding-top: 15rem;
