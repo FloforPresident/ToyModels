@@ -1,28 +1,56 @@
 <?php
-    if(!isset($_SESSION['loggingOUT']))
-    {
-        $_SESSION['loggingOUT'] = "group_hidden";
-    }
-    
+    session_start();
+
+    //hilfsvariablen für Warenkorbarray
+    $item = NULL;
+    $amount = NULL;
 ?>
-<head>
-    <?php //include "connect.php"; ?>
-    <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
-    <?php include "warenkorbhover.php"; ?>
 
-</head>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dynamische Suche Test</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/index-style.css">
 
-<header>
+        <script src="js/main.js"></script>
+        <script src="js/dynamischesuche.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+       <script>
+       $(document).ready(function()
+        {
+            $('#suchbegriff').keyup(function()
+            {
+                if($(this).val().length >= 3)
+                {
+                    $.get("suche.php", {search: $(this).val()}, function(data)
+                    {
+                        $("#results").html(data);
+                    });
+                } else {
+                    $("#results").html("");
+                }
+            });
+        });
+        </script>
+
+
+        <meta charset="utf-8"> 
+
+        <?php include "connect.php"; ?>
+    </head>
+    <body>
+    <header>
             <section>
                 <h1>
                     <a href="index.php">Toy Models GmbH</a>
                 </h1>
             </section>  
             <section id="suchfeld">
-                    <form action="suche.php" >
-                    <input type="text" id="search" name="suchbegriff" placeholder="Suche">
-                    <button type="submit">Suchen</button>
+                    <form action="suche.php">
+                    <input type="text" id="suchbegriff" name="suchbegriff" placeholder="Suche">
+                    <button type="submit" name="submit" value="Suchen">Suchen</button>
                 </form>
             </section>  
 
@@ -91,12 +119,23 @@
             </section>
             <!-- abmelden ende -->
 
-            <section id="warenkorb"   
-            onmouseover='getHoverTemplate(this.id)' 
-            onmouseout='killHoverTemplate(this.id)'>
+
+            <section id="warenkorb" class="cartHover">
                 <a href="warenkorb.php">
                     <img width="40px" src="images/warenkorb_white.png"/>
                 </a>
+                <?php include "warenkorbhover.php"; ?>
             </section>
-
         </header> 
+
+
+        <main class="artikelAnzeige">
+                <div id="results">
+
+
+
+                </div>
+        </main>
+        <?php include "footer.php" ?>
+    </body>
+</html>

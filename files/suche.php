@@ -6,8 +6,11 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index-style.css">
 
-        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <!-- <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script> -->
         <script src="js/main.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
         <meta charset="utf-8"> 
 
         <?php include "connect.php"; ?>
@@ -26,7 +29,7 @@
             <section id="artikelAnzeige">
             <?php 
                 $ergebniszaehler = "0";
-                $suchbegriff = trim(htmlentities(stripslashes($_POST["suchbegriff"]))); 
+                $suchbegriff = trim(htmlentities(stripslashes($_GET["suchbegriff"]))); 
                 echo "<h2>Ergebnisse für &bdquo;" . $suchbegriff . "&ldquo;</h2>";
                 echo "<br><br>";
 
