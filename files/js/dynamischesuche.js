@@ -16,7 +16,7 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var artikel = JSON.parse(this.responseText);
-    console.log(artikel);
+    // console.log(artikel[2]);
   }
 };
 xmlhttp.open("GET", "create_json.php", true);

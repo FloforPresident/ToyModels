@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="css/index-style.css">
 
         <script src="js/main.js"></script>
-        <script src="js/dynamischesuche.js"></script>
 
         <meta charset="utf-8"> 
 

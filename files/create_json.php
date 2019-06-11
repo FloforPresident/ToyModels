@@ -11,7 +11,7 @@
         $i++;
     }
 
-    echo '{"artikel":[';
+    echo '[';
 
     for ($i = 0; $i < count($artikelArray); $i++){
         
@@ -21,6 +21,6 @@
         }
     }
 
-    echo ']}';
+    echo ']';
 ?>
 
