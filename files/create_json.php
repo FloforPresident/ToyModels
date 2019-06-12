@@ -1,26 +1,24 @@
 <?php
     include "connect.php";
 
-    $artikel = "SELECT * FROM artikel";
-    $artikelArray = array();
-    $i = 0;
-
-    foreach($pdo->query($artikel) as $col){
-
-        $artikelArray[$i] = $col['ArtikelName'];
-        $i++;
+    if (isset($_GET['q']))
+    {
+        $searchpara ="%". $_GET['q']. "%";
     }
 
-    echo '[';
-
-    for ($i = 0; $i < count($artikelArray); $i++){
-        
-        echo json_encode($artikelArray[$i]);
-        if($i != count($artikelArray) - 1){
-            echo ',';
-        }
+    $sql = "SELECT ArtikelName FROM artikel WHERE artikel.ArtikelName LIKE :artName LIMIT 5";
+    
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":artName", $searchpara);
+    $stmt->execute();
+    $artikel = $stmt -> fetchAll();
+ 
+    $json = "[";
+    foreach ($artikel as $row) {
+        if ($json != "[") {$json .= ",";}
+        $json .= '{"Name":"'. $row['ArtikelName']     . '"}'; 
     }
-
-    echo ']';
+    $json .="]";
+    echo $json;
 ?>
 

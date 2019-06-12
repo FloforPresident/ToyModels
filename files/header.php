@@ -23,7 +23,7 @@
     </section>  
     <section id="suchfeld">
             <form action="suche.php" >
-            <input type="text" id="search" name="suchbegriff" placeholder="Suche">
+            <input type="text" id="search" name="suchbegriff" placeholder="Suche" onkeyup="suchVorschlaege(this.value)">
             <button type="submit">Suchen</button>
             <div id="suchVorschlaege"></div>
         </form>
