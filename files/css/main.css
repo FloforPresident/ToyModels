@@ -94,17 +94,22 @@ header #suchVorschlaege{
     color: #000;
     position:absolute;
     margin-top:1.5rem;
+    z-index:10;
 
+}
+#suchVorschlaege table{
+    border-spacing: 0px;
 }
 #suchVorschlaege table td{
     padding:1rem;
-    padding-right:3rem;
+    min-width:300px;
+    cursor:pointer;
 }
 #suchVorschlaege table td:hover{
     color: #FFF;
     transition: background-color 0.5s ease, color 0.5s ease;
     -webkit-transition: background-color 0.5s ease, color 0.5s ease;
-    background-color: #888;
+    background-color: palevioletred;
 }
 
 
@@ -165,5 +170,8 @@ footer section{
     }
     main{
         padding-top: 15rem;
+    }
+    header #suchVorschlaege{
+        margin-top:.5rem;
     }
 }
