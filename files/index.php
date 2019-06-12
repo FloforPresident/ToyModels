@@ -79,6 +79,8 @@
                                 }
                                 $amount = $_POST['anzahl'];
                                 $_SESSION[$col["ArtikelNr"]] = $amount;
+
+                                echo "<meta http-equiv='refresh' content='0'>";
                             }
                         echo("</form>");
                     echo("</section>");       

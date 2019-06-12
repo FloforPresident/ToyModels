@@ -77,7 +77,7 @@
                                     unset($arr[$key]);
                                     $_SESSION['cart_items'] = $arr;
                                     
-                                    header("Location: warenkorb.php");
+                                    echo "<meta http-equiv='refresh' content='0'>";
                                 }
                                 echo("</form>");
 
