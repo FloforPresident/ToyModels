@@ -62,7 +62,7 @@
                         echo("<form method='post'  class='inWarenkorb'>
                             <label>Anzahl:</label>&nbsp;&nbsp;&nbsp;
                             <input name='anzahl' type='number' min='1' value='1' />&nbsp;&nbsp;
-                            <button name=".$col['ArtikelNr']." action='index.php' type='submit'>Add to cart</button>");
+                            <button name=".$col['ArtikelNr']." action='' type='submit'>Add to cart</button>");
 
                             if(isset($_POST[$col["ArtikelNr"]]))
                             {

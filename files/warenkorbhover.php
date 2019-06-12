@@ -1,4 +1,3 @@
-<template id="carthover">
 <style>
 /* popup text */
 .cartHoverText {
@@ -28,51 +27,50 @@
         top: 18rem;
     }
 }
-
-/* .cartHover:hover .cartHoverText {
-  visibility: visible;
-} */
 </style>
+
+<template id="carthover">
 <?php
- //add to cart hover
- echo("<span class='cartHoverText'>");
- if(isset($_SESSION['cart_items']))
-     {
-         $arr = array_unique($_SESSION['cart_items']);
-         
-         echo("<tr>");
-         echo("<h4>Artikel im Warenkorb</h4>");
-         foreach($arr as $a)
-         {
-             $artNumber = "SELECT * FROM artikel WHERE ArtikelNr='$a'";
-             foreach($pdo->query($artNumber) as $col)
-             {
-                 echo("<section>
-                     <table>");
-                         echo("<li class='menge'>".$_SESSION[$col['ArtikelNr']]."x ".$col['ArtikelName']."</li>");
-                echo("</tr>");
-             }
-         }
-         echo("</table>
-         </section>");
-     }
-     else{
-         echo("<h3>Keine Artikel im Warenkorb</h3>");
-     }
-echo("</span>");
+    //add to cart hover content
+    echo("<span class='cartHoverText'>");
+    if(isset($_SESSION['cart_items']))
+        {
+            $arr = array_unique($_SESSION['cart_items']);
+            
+            echo("<tr>");
+            echo("<h4>Artikel im Warenkorb</h4>");
+            foreach($arr as $a)
+            {
+                $artNumber = "SELECT * FROM artikel WHERE ArtikelNr='$a'";
+                foreach($pdo->query($artNumber) as $col)
+                {
+                    echo("<section>
+                        <table>");
+                            echo("<li class='menge'>".$_SESSION[$col['ArtikelNr']]."x ".$col['ArtikelName']."</li>");
+                    echo("</tr>");
+                }
+            }
+            echo("</table>
+            </section>");
+        }
+        else{
+            echo("<h3>Keine Artikel im Warenkorb</h3>");
+        }
+    echo("</span>");
 ?>
 </template>
 
+<!-- add to cart hover show -->
 <script>
     function getHoverTemplate(element) 
     {
-            let temp = document.getElementById('carthover');
-            let content = temp.content.cloneNode(true);
-
-            document.getElementById(element).appendChild(content);             
-
-            console.log(content)
-            console.log("aufruf findet statt");
+        let temp = document.getElementById('carthover');
+        let content = temp.content.cloneNode(true);
+        
+        document.getElementById(element).appendChild(content);             
+        
+        console.log(content)
+        console.log("aufruf findet statt");
     }
     function killHoverTemplate(element) 
     {

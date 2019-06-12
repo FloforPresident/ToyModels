@@ -40,7 +40,7 @@
     <main>
         <h1>Hi ich bin Basti, ich betreue deinen Warenkorb</h1>
             <?php 
-                $gesamtpreis = 0;
+            $gesamtpreis = 0;
 
             //Artikel auslesen
             if(isset($_SESSION['cart_items']))
@@ -70,17 +70,15 @@
 
                                 echo("<form action='warenkorb.php' method='post' class='inWarenkorb'>
                                     <button name=".$col['ArtikelNr']." type='submit'>Delete</button>");
-
                                 //Artikel aus dem Warenkorb entfernen
                                 if(isset($_POST[$col["ArtikelNr"]]))
                                 {   
                                     $key = array_search($a, $arr);
                                     unset($arr[$key]);
                                     $_SESSION['cart_items'] = $arr;
-
-                                    header("Location: warenkorb.php"); //Seiten Reload
+                                    
+                                    header("Location: warenkorb.php");
                                 }
-
                                 echo("</form>");
 
                             echo("</td>");
@@ -89,6 +87,7 @@
                         </section>");
 
                         $gesamtpreis += $col['Listenpreis'];
+                        unset($_POST[$col["ArtikelNr"]]);
                     }
                 }
             }
