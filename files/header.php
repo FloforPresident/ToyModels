@@ -23,7 +23,9 @@
     </section>  
     <section id="suchfeld">
             <form action="suche.php" >
-            <input type="text" id="search" name="suchbegriff" placeholder="Suche" onkeyup="suchVorschlaege(this.value)">
+            <input type="text" id="search" name="suchbegriff" 
+                    placeholder="Suche" onkeyup="suchVorschlaege(this.value)"
+                    autocomplete="off">
             <button type="submit">Suchen</button>
             <div id="suchVorschlaege"></div>
         </form>
